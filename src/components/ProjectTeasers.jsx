@@ -11,12 +11,15 @@ export default function ProjectTeasers() {
     <section id="projects" className="section">
       <div className="container">
         <h2>Flight Logs</h2>
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
+        <div className="projects-grid">
           {missions.map((m) => (
             <motion.div key={m.title} className="card" whileHover={{ y: -4 }}>
+              <div className="media-16x9"></div>
               <div className="card-title">{m.title} <span className="badge">{m.year}</span></div>
               <p className="muted">{m.brief}</p>
-              <a href="/projects" className="button">Open Log →</a>
+              <div className="card-cta">
+                <a href="/projects" className="button">Open Log →</a>
+              </div>
             </motion.div>
           ))}
         </div>

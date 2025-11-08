@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import './App.css'
@@ -18,6 +18,8 @@ function ScrollTop() {
 }
 
 function Nav() {
+  const [open, setOpen] = useState(false)
+  const close = () => setOpen(false)
   return (
     <div className="nav">
       <div className="container nav-inner">
@@ -29,16 +31,35 @@ function Nav() {
           </div>
         </div>
         <div className="menu">
-          {/* Use anchors to jump to sections on Home */}
-          <NavLink to="/" end>Home</NavLink>
-          <a href="/#engine-room">Engine Room</a>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/hackathons">Hackathons</NavLink>
-          {/* Removed Skills from navbar per redesign */}
-          <NavLink to="/build-log">Build Log</NavLink>
-          <NavLink to="/contact" className="button primary">Contact</NavLink>
+          <button className="button menu-toggle" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
+          <div className="menu-links">
+            <NavLink to="/" end onClick={close}>Home</NavLink>
+            <a href="/#engine-room" onClick={close}>Engine Room</a>
+            <NavLink to="/projects" onClick={close}>Projects</NavLink>
+            <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
+            <NavLink to="/build-log" onClick={close}>Build Log</NavLink>
+            <NavLink to="/contact" className="button primary" onClick={close}>Contact</NavLink>
+          </div>
         </div>
       </div>
+      {open && (
+        <div className="mobile-drawer" role="dialog" aria-modal="true">
+          <div className="container">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div className="brand-title">Menu</div>
+              <button className="button" onClick={close}>Close</button>
+            </div>
+            <div className="drawer-links">
+              <a href="/" onClick={close}>Home</a>
+              <a href="/#engine-room" onClick={close}>Engine Room</a>
+              <a href="/projects" onClick={close}>Projects</a>
+              <a href="/hackathons" onClick={close}>Hackathons</a>
+              <a href="/build-log" onClick={close}>Build Log</a>
+              <a href="/contact" className="button primary" onClick={close}>Contact</a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

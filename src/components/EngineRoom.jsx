@@ -16,7 +16,7 @@ function Gauge({ label, value }) {
           transition={{ duration: 1.2 }}
         />
       </svg>
-      <div className="gauge-label">{label}</div>
+      <div className="gauge-label gauge-label-mobile">{label}</div>
       <div className="gauge-value">{value}%</div>
     </div>
   )
@@ -56,7 +56,7 @@ export default function EngineRoom() {
   return (
     <section id="engine-room" className="section">
       <div className="container">
-        <div className="grid" style={{ gridTemplateColumns: '1.4fr 1fr', gap: 24 }}>
+        <div className="engine-room">
           <div>
             <h2>Engine Room</h2>
             <p>
@@ -66,18 +66,18 @@ export default function EngineRoom() {
               My approach blends research, clear PRDs, tight execution rhythms, and telemetry that informs iteration. The goal is repeatable lift — precision and speed together.
             </p>
           </div>
-          <div className="gauges">
+          <div className="gauge-grid">
             <Gauge label="Speed" value={93} />
             <Gauge label="Precision" value={93} />
             <Gauge label="Lift" value={100} />
           </div>
         </div>
 
-        <div className="systems">
+        <div className="skills-groups">
           {panels.map((p) => (
             <div key={p.group} className="panel">
               <div className="panel-title">{p.group}</div>
-              <div className="panel-skills">
+              <div className="skills-chips">
                 {p.skills.map((s) => (
                   <button key={s} className="chip" onClick={() => setOpenSkill(s)}>{s}</button>
                 ))}

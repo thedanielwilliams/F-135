@@ -25,7 +25,7 @@ export default function ScrollSpy({ sections = [] }) {
   }, [sections])
 
   return (
-    <div className="scrollspy">
+    <div className="dot-nav scrollspy">
       {sections.map((s) => (
         <a key={s.id} href={`/#${s.id}`} className={`dot ${active === s.id ? 'active' : ''}`} aria-label={s.label} title={s.label} />
       ))}

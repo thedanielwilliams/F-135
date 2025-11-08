@@ -9,9 +9,9 @@ export default function BuildLogList() {
     <section id="build-log" className="section">
       <div className="container">
         <h2>Build Log</h2>
-        <div className="list">
+        <div className="build-list">
           {entries.map((e) => (
-            <div key={e.title} className="list-item">
+            <div key={e.title} className="build-list-item">
               <div className="list-title">{e.title}</div>
               <div className="list-note">{e.note}</div>
             </div>
