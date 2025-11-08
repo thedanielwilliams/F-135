@@ -237,8 +237,8 @@ body, .hero { overflow-x: hidden; }
 /* Tap-to-expand patch cards (no 3D flip) */
 .patch-card { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.05); padding: 12px; cursor: pointer; transition: background 160ms ease, transform 160ms ease; }
 .patch-card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
-.patch-head { display: grid; place-items: center; text-align: center; gap: 4px; }
-.patch-details { display: grid; gap: 8px; text-align: center; opacity: 0; pointer-events: none; transform: translateY(-4px); transition: opacity 160ms ease, transform 160ms ease; margin-top: 8px; }
+.patch-head { display: grid; place-items: start; text-align: left; gap: 4px; }
+.patch-details { display: grid; gap: 8px; text-align: left; justify-items: start; opacity: 0; pointer-events: none; transform: translateY(-4px); transition: opacity 160ms ease, transform 160ms ease; margin-top: 8px; }
 .patch-card.is-open .patch-details { opacity: 1; pointer-events: auto; transform: translateY(0); }
 @media (hover:hover) { .patch-card:hover .patch-details { opacity: 1; transform: translateY(0); pointer-events: auto; } }
 @media (hover:none) { .patch-card { will-change: transform; } }
@@ -277,9 +277,9 @@ body, .hero { overflow-x: hidden; }
 @keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
 .engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
 
-.patch-title { font-weight: 600; text-align: center; }
+.patch-title { font-weight: 600; text-align: left; }
 .patch-award { color: var(--muted); font-size: 12px; }
-.patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }
+.patch-desc { text-align: left; color: var(--muted); margin-bottom: 8px; }
 .micro-modal-body { color: var(--muted); margin-bottom: 10px; }
 .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
 .signal { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; text-align: center; background: rgba(255,255,255,0.03); }
@@ -295,9 +295,9 @@ body, .hero { overflow-x: hidden; }
 @keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
 .engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
 
-.patch-title { font-weight: 600; text-align: center; }
+.patch-title { font-weight: 600; text-align: left; }
 .patch-award { color: var(--muted); font-size: 12px; }
-.patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }
+.patch-desc { text-align: left; color: var(--muted); margin-bottom: 8px; }
 .micro-modal-body { color: var(--muted); margin-bottom: 10px; }
 .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
 .signal { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; text-align: center; background: rgba(255,255,255,0.03); }
@@ -313,9 +313,9 @@ body, .hero { overflow-x: hidden; }
 @keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
 .engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
 
-.patch-title { font-weight: 600; text-align: center; }
+.patch-title { font-weight: 600; text-align: left; }
 .patch-award { color: var(--muted); font-size: 12px; }
-.patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }
+.patch-desc { text-align: left; color: var(--muted); margin-bottom: 8px; }
 .micro-modal-body { color: var(--muted); margin-bottom: 10px; }
 .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
 .signal { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; text-align: center; background: rgba(255,255,255,0.03); }

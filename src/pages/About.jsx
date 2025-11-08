@@ -26,7 +26,7 @@ export default function About() {
             </div>
             <div className="about-landing-media">
               <div className="media-16x9">
-                <img src="/IMG_9210.jpg" alt="Daniel Williams" loading="lazy" />
+                <img src="/IMG_9210.jpg" alt="Portrait" loading="lazy" />
               </div>
             </div>
           </div>
@@ -36,26 +36,11 @@ export default function About() {
         <motion.div {...fadeUp} style={{ marginTop: 28 }}>
           <h3 className="section-title">How I Think</h3>
           <p className="muted">I believe good products are built on systems, not guesswork. My process starts from first principles — understanding the root cause of a problem before designing a solution. I map relationships, feedback loops, and trade-offs to make sure what we build isn’t just functional, but sustainable.</p>
-          <div className="two-col">
-            <div>
-              <ul className="bullets">
-                <li>Map before building.</li>
-                <li>Test assumptions early.</li>
-                <li>Design for feedback.</li>
-              </ul>
-            </div>
-            <div>
-              <div className="diagram card">
-                <div className="diagram-row">
-                  <span className="chip">Inputs</span>
-                  <span className="chip">Signals</span>
-                  <span className="chip">Decisions</span>
-                  <span className="chip">Feedback</span>
-                </div>
-                <small className="muted">A simple loop: discover → define → deliver → learn.</small>
-              </div>
-            </div>
-          </div>
+          <ul className="bullets" style={{ marginTop: 8 }}>
+            <li>Map before building.</li>
+            <li>Test assumptions early.</li>
+            <li>Design for feedback.</li>
+          </ul>
         </motion.div>
 
         {/* 3) How I Communicate */}
@@ -108,9 +93,12 @@ export default function About() {
         .diagram { display: grid; gap: 10px; }
         .diagram-row { display: flex; flex-wrap: wrap; gap: 8px; }
 
-        /* Media helper to ensure image has a proper box and aspect ratio */
-        .media-16x9 { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
-        .media-16x9 img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        /* Media helper: allows setting the target size/ratio of the image */
+        .media-16x9 { position: relative; width: 100%; aspect-ratio: var(--about-img-ratio, 16 / 9); overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
+        .media-16x9 img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+        @media (min-width: 768px) {
+          .about-landing-media .media-16x9 { --about-img-ratio: 3 / 4; max-height: 460px; }
+        }
 
         .icons-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0,1fr)); }
         @media (min-width: 768px) { .icons-grid { grid-template-columns: repeat(3, minmax(0,1fr)); } }
