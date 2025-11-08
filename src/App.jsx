@@ -24,15 +24,23 @@ function Nav() {
     <div className="nav">
       <div className="container nav-inner">
         <div className="brand">
-          {/* Removed F‑135 badge */}
-          <div>
+          {/* Desktop brand (not a link) */}
+          <div className="desktop-only">
             <div className="brand-title">Daniel Williams</div>
             <div className="brand-sub">Product Manager — Lagos</div>
           </div>
+          {/* Mobile brand (clickable to Home) */}
+          <NavLink to="/" className="mobile-only brand-link" onClick={close}>
+            <div className="brand-title">Daniel Williams</div>
+            <div className="brand-sub">Product Manager — Lagos</div>
+          </NavLink>
         </div>
         <div className="menu">
-          <button className="button menu-toggle" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
-          <div className="menu-links">
+          {/* Menu toggle only on mobile */}
+          <button className="button menu-toggle mobile-only" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
+          {/* Desktop links include Home */}
+          <div className="menu-links desktop-only">
+            <NavLink to="/" onClick={close}>Home</NavLink>
             <NavLink to="/about" onClick={close}>About me</NavLink>
             <NavLink to="/projects" onClick={close}>Projects</NavLink>
             <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
@@ -49,6 +57,7 @@ function Nav() {
               <button className="button" onClick={close}>Close</button>
             </div>
             <div className="drawer-links">
+              <NavLink to="/" onClick={close}>Home</NavLink>
               <NavLink to="/about" onClick={close}>About me</NavLink>
               <NavLink to="/projects" onClick={close}>Projects</NavLink>
               <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>

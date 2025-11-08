@@ -4,11 +4,21 @@
   flex-direction: column;
   min-height: 100vh;
 }
-.main {
-  flex: 1;
-}
+.main { flex: 1; }
 
 .nav a { font-weight: 600; }
 .nav .brand-title { letter-spacing: 0.2px; }
+
+/* Responsive visibility helpers */
+.mobile-only { display: none; }
+.desktop-only { display: block; }
+@media (max-width: 768px) {
+  .mobile-only { display: initial; }
+  .desktop-only { display: none; }
+}
+
+/* Optional layout tweaks */
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.menu-links { display: flex; gap: 12px; align-items: center; }
 
 .footer small { display: block; margin-top: 8px; }
