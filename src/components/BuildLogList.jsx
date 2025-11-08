@@ -1,6 +1,6 @@
 const entries = [
   { title: 'What emerging PMs can learn from hackathons', note: '“Shipping beats theory.”', href: 'https://medium.com/@onikoladanielwilliams/what-emerging-product-managers-can-learn-from-hackathons-b21114f4af01' },
-  { title: 'How I write PRDs that move teams', note: '“Frictionless handoffs.”' },
+  { title: 'How I write PRDs that move teams', note: '“Frictionless handoffs.”', href: 'https://medium.com/@onikoladanielwilliams/how-i-write-prds-that-move-teams-the-art-of-a-product-requirements-document-that-inspires-action-d9b1b3b02fa4' },
   { title: 'The bug funnel we used at 64SQRS', note: '“Precision over panic.”' },
 ]
 
