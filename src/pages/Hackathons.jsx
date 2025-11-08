@@ -3,28 +3,27 @@ import { useState } from 'react'
 export default function Hackathons() {
   const items = [
     {
-      name: 'BloodChain', award: '₦5M Prize', year: 2025, role: 'Product Lead', codename: 'The Podium Hackathon', date: 'August 2025',
-      objective: 'Design and deploy Nigeria’s first AI-powered blood donation and logistics platform — a system capable of connecting donors, hospitals, and emergencies in real time.',
+      name: 'BloodChain', award: 'Winner — ₦500,000 prize funding', year: 2025, role: 'Product Lead', codename: 'The Podium Hackathon', date: 'Aug 2025',
+      objective: 'Defined the product vision for Nigeria’s first AI-powered blood donation and logistics platform.',
       paragraphs: [
-        'The mission began with turbulence, we had limited time, high stakes, and a five-person crew from different disciplines. As Product Lead, I set the course: a vision that tied technology to empathy. Within forty-eight hours, we defined user journeys, built prototypes, and aligned every sprint around one goal — save time, save lives.',
-        'I directed the pitch strategy like a final descent, tight, timed, and deliberate. The result: a clean landing and a ₦500,000 prize fund. But more than that, BloodChain left the runway as a nationwide health solution with genuine potential for real-world impact.'
+        'Led a 5-person cross-functional team to win ₦500,000 prize funding.',
+        'Directed pitch strategy and team alignment, positioning BloodChain as a nationwide health solution with real-world impact.'
       ]
     },
     {
-      name: 'XBag', award: 'Top 3, GNEC', year: 2023, role: 'Product Lead', codename: 'GNEC Hackathon', date: 'August 2023',
-      objective: 'Turn waste into wearable innovation — an eco‑fashion MVP crafted from upcycled plastic.',
+      name: 'XBag', award: 'Top 3 — GNEC', year: 2023, role: 'Product Lead', codename: 'GNEC Hackathon', date: 'Aug 2023',
+      objective: 'Conceptualised and shipped an MVP for an eco-fashion product made from upcycled plastic.',
       paragraphs: [
-        'I assembled a small but driven team and led the first sprint on user research and feature planning. We created personas that felt like real customers, not slides.',
-        'I wrote the mission specs, the deck, the UX walkthrough, and the roadmap.',
-        'When we submitted, XBag cut through a crowd of over 5,000 participants and landed 3rd place. The judges called our vision “sharp, scalable, and human.” I called it a reminder that sustainability can move fast — if the product flies straight.'
+        'Led feature planning, persona creation, and final pitch delivery, securing 3rd place out of 5,000 participants.',
+        'Co-developed the strategy deck and UX walk-through, commended by judges for clarity of vision.'
       ]
     },
     {
       name: 'Harmony DAO', award: 'Top 5', year: 2021, role: 'Product Lead', codename: 'Team BuChain', date: 'Dec 2020 – Oct 2021',
-      objective: 'Build a blockchain‑based identity system capable of giving users a single, verifiable digital self.',
+      objective: 'Built a blockchain-based identity system.',
       paragraphs: [
-        'Harmony DAO was a long‑range operation, ten months of experimentation and re‑alignment. I owned the roadmap from take‑off to landing, refining features and leading Figma prototypes that mapped the chain between trust and accessibility.',
-        'Our team ranked Top 5 out of 60+ entries, but the win was in the proof of scalability we delivered. The pitch showed not just how the system worked, but how it could hold identity at the speed of trust.'
+        'Owned the product roadmap, defined feature scope, and co-led front-end prototyping in Figma.',
+        'Delivered a comprehensive pitch to judges, showcasing product-market fit and scalability; ranked Top 5 out of 60+ teams.'
       ]
     }
   ]

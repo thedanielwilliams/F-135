@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 const patches = [
-  { title: 'BloodChain (₦5M)', award: 'AI blood logistics Winner', desc: 'Optimized blood delivery using AI routing and cold-chain checks.' },
-  { title: 'XBag (GNEC)', award: 'Eco-fashion Top 3', desc: 'Upcycled bag system with circular supply insights.' },
-  { title: 'Harmony DAO', award: 'Blockchain identity Top 5', desc: 'Decentralized identity primitives for community governance.' },
+  { title: 'BloodChain — The Podium Hackathon', award: 'Winner — ₦500,000 prize', desc: 'Defined product vision for Nigeria’s first AI blood donation + logistics platform; led 5-person team and directed pitch strategy.' },
+  { title: 'XBag — GNEC Hackathon', award: 'Top 3 (out of 5000)', desc: 'Conceptualised and shipped eco‑fashion MVP from upcycled plastic; personas, feature planning, and final pitch.' },
+  { title: 'Harmony DAO — Team BuChain', award: 'Top 5', desc: 'Blockchain‑based identity system; owned roadmap, feature scope, and co‑led Figma prototyping with scalable pitch.' },
 ]
 
 export default function HackathonPatches() {
@@ -22,7 +22,7 @@ export default function HackathonPatches() {
               </div>
               <div className="patch-details">
                 <div className="patch-desc">{p.desc}</div>
-                <a href="/hackathons" className="button">See All Flights →</a>
+                <a href="/hackathons" className="button">View Details →</a>
               </div>
             </div>
           ))}
