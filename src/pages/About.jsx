@@ -8,6 +8,8 @@ const fadeUp = {
 
 export default function About() {
   const resumeHref = '/Daniel_Williams_Resume.pdf' // optional, update when available
+  const contactHref = '/contact'
+  const mailto = 'mailto:onikoladanielwilliams@gmail.com'
   return (
     <section className="section">
       <div className="container">
@@ -82,6 +84,16 @@ export default function About() {
                 <li>Measure → dashboards, learnings, next bets.</li>
               </ul>
             </div>
+          </div>
+        </motion.div>
+
+        {/* 5) Open to Opportunities */}
+        <motion.div {...fadeUp} style={{ marginTop: 32 }}>
+          <h3 className="section-title">Open to New Opportunities</h3>
+          <p className="muted">I'm currently open to new roles and collaborations. If my approach resonates with your team, I'd love to connect.</p>
+          <div className="cta-row">
+            <a className="button primary" href={mailto}>Send me a mail</a>
+            
           </div>
         </motion.div>
       </div>
