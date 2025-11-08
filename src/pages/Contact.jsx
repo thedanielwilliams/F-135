@@ -9,7 +9,7 @@ export default function Contact() {
         <div className="card" style={{ display: 'grid', gap: 16, alignItems: 'center' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
             <a className="button primary" href={`mailto:${email}`}>Send me a mail</a>
-            <span className="badge">F‑135 Engine</span>
+            
           </div>
           <small className="muted">Tip: if this doesn’t open your mail app, copy this address: onikoladanielwilliams@gmail.com<code style={{ userSelect: 'all' }}>{email}</code></small>
         </div>
