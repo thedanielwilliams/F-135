@@ -15,7 +15,7 @@ export default function HackathonPatches() {
     <section id="hackathons" className="section">
       <div className="container">
         <h2>Hackathons</h2>
-        <p className="muted" style={{ marginTop: 4, marginBottom: 12 }}>Aside from working with strong teams, I enjoy the challenge of hackathons — rapid problem‑solving, shipping under pressure, and learning by doing. Here are a few I’ve experimented with.</p>
+        <p className="muted" style={{ marginTop: 4, marginBottom: 12 }}>Aside from working with cracked teams, I enjoy the challenge of hackathons, rapid problem‑solving, shipping under pressure, and learning by doing. Here are a few I’ve experimented with.</p>
         <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
           {patches.map((p, i) => (
             <div key={p.title} className={`patch-card ${open === i ? 'is-open' : ''}`} onClick={() => toggle(i)}>

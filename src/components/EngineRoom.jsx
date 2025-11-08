@@ -26,12 +26,12 @@ const systems = [
   {
     icon: '🧭',
     title: 'Product',
-    body: 'I turn ideas into structured execution — defining roadmaps, writing clear PRDs, and driving agile sprints that keep teams moving in sync and focused on measurable outcomes.'
+    body: 'I turn ideas into structured execution, defining roadmaps, writing clear PRDs, and driving agile sprints that keep teams moving in sync and focused on measurable outcomes.'
   },
   {
     icon: '🎯',
     title: 'Research & Design',
-    body: 'I ground product decisions in user insight — designing flows that are intuitive, validated through testing, and informed by continuous feedback to remove friction and enhance usability.'
+    body: 'I ground product decisions in user insight, designing flows that are intuitive, validated through testing, and informed by continuous feedback to remove friction and enhance usability.'
   },
   {
     icon: '⚙️',
@@ -41,7 +41,7 @@ const systems = [
   {
     icon: '📊',
     title: 'Data',
-    body: 'I use data as navigation — tracking performance through SQL and analytics dashboards, identifying trends through cohort analysis, and translating metrics into actionable strategy for growth and iteration.'
+    body: 'I use data as navigation, tracking performance through SQL and analytics dashboards, identifying trends through cohort analysis, and translating metrics into actionable strategy for growth and iteration.'
   }
 ]
 
@@ -80,7 +80,7 @@ export default function EngineRoom() {
             <div className="engine-sub">
               <p>From discovery to delivery, I help teams stay aligned on the problem, narrative, and plan.</p>
               <p>My method blends research, clear documentation, agile execution, and telemetry that powers iteration.</p>
-              <p>The goal: repeatable lift — precision and speed in harmony.</p>
+      
             </div>
           </div>
 

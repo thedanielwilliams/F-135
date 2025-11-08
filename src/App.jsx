@@ -71,7 +71,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        Fueled by curiosity. Guided by data. Landing soon somewhere ambitious.
+        F-135 Uber Jet
         <small>© {new Date().getFullYear()} Daniel Williams Onikola</small>
       </div>
     </footer>
