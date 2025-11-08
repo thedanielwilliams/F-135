@@ -22,7 +22,7 @@ export default function Hero() {
     <section id="hero" className="section">
       <motion.div className="container hero" style={{ y, opacity }}>
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="hero-title"> Hi, I’m Daniel.👋 A Product Manager who turns ideas into systems that grow. </h1>
+          <h2 className="hero-title"> Hi, I’m Daniel.👋 A Product Manager who turns ideas into systems that grow. </h2>
           <p className="hero-sub">For over three years, I’ve helped teams turn problems into valuable products. I spot clear PRDs and SRDs, design user journeys and collaborate efficiently with engineers.</p>
           <div className="cta-row" style={{ justifyContent: 'center' }}>
       

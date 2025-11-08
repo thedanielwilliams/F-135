@@ -27,7 +27,7 @@ function Nav() {
           {/* Desktop brand (not a link) */}
           <div className="desktop-only">
             <div className="brand-title">Daniel Williams</div>
-            <div className="brand-sub">Product Manager — Lagos</div>
+            <div className="brand-sub">Product Manager</div>
           </div>
           {/* Mobile: no brand text; only Menu button (on the right) */}
         </div>
