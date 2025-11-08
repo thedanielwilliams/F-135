@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-function Gauge({ label, value }) {
+function Gauge({ label, value, color = 'var(--accent)' }) {
   const circumference = 2 * Math.PI * 36
   const dash = (value / 100) * circumference
   return (
@@ -9,7 +9,7 @@ function Gauge({ label, value }) {
       <svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">
         <circle cx="48" cy="48" r="36" stroke="rgba(255,255,255,0.12)" strokeWidth="10" fill="none" />
         <motion.circle
-          cx="48" cy="48" r="36" stroke="var(--accent)" strokeWidth="10" fill="none"
+          cx="48" cy="48" r="36" stroke={color} strokeWidth="10" fill="none"
           strokeDasharray={`${dash} ${circumference}`}
           initial={{ strokeDashoffset: circumference }}
           animate={{ strokeDashoffset: circumference - dash }}
@@ -86,9 +86,9 @@ export default function EngineRoom() {
 
           {/* Right column: dials */}
           <div className="gauge-grid">
-            <Gauge label="Design" value={77} />
-            <Gauge label="Documentation" value={88} />
-            <Gauge label="Technology" value={95} />
+            <Gauge label="Design" value={77} color="var(--afterburn-blue)" />
+            <Gauge label="Documentation" value={88} color="var(--accent-orange)" />
+            <Gauge label="Technology" value={95} color="var(--accent-purple)" />
           </div>
         </div>
 

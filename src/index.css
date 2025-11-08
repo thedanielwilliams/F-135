@@ -4,6 +4,8 @@
   --engine-grey: #2C2C2E;
   --accent-orange: #FF6A00;
   --afterburn-blue: #00B2FF;
+  --accent: var(--afterburn-blue);
+  --accent-purple: #9D7CFF;
   --text: #EAEAEA;
   --muted: #A0A0A0;
 
