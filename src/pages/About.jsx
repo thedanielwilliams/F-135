@@ -16,12 +16,12 @@ export default function About() {
           <h2>About Me</h2>
           <div className="about-landing">
             <div className="about-landing-text">
-              <div className="tagline">I’m Daniel — a Product Manager who builds systems that move ideas from concept to clarity.</div>
+      
               <p>
-                For me, product management isn’t about features or checklists — it’s about alignment. I help teams stay focused on the problem, design the right process, and deliver results that matter. Over the years, I’ve learned that precision and empathy can coexist — that speed without clarity is noise, and clarity without speed is inertia.
+                Here is how I think about it, product management isn’t about features or checklists — it’s about alignment. I help teams stay focused on the problem, design the right process, and deliver results that matter. Over the years, I’ve learned that precision and empathy can coexist — that speed without clarity is noise, and clarity without speed is inertia.
               </p>
               <div className="cta-row">
-                <a className="button" href={resumeHref} download>Download Resume →</a>
+                
               </div>
             </div>
             <div className="about-landing-media">
@@ -57,25 +57,32 @@ export default function About() {
           <div className="muted" style={{ marginTop: 8 }}>Average sprint velocity: 2–3 weeks</div>
         </motion.div>
 
-        {/* 4) Articles & Insights */}
+        {/* 4) How I Work */}
         <motion.div {...fadeUp} style={{ marginTop: 32 }}>
-          <h3 className="section-title">Articles & Field Notes</h3>
-          <p className="muted">I write to document how I think — from product frameworks to post‑launch learnings. Each article is a small piece of my cockpit view.</p>
-          <div className="article-cards">
-            <div className="card">
-              <div className="card-title">What emerging PMs can learn from hackathons</div>
-              <div className="muted">Shipping beats theory.</div>
+          <h3 className="section-title">How I Work</h3>
+          <p className="muted">From discovery to delivery, I optimize for clarity, speed, and measurable outcomes.</p>
+          <div className="two-col" style={{ marginTop: 12 }}>
+            <div>
+              <h4 className="section-title">Operating Principles</h4>
+              <ul className="bullets">
+                <li>Start with the problem; write the one‑sentence brief.</li>
+                <li>Define metrics and success criteria up front.</li>
+                <li>Ship in small increments; test with real users.</li>
+                <li>Keep docs light: PRD + decision log.</li>
+                <li>Bias to action; course‑correct with data.</li>
+              </ul>
             </div>
-            <div className="card">
-              <div className="card-title">The bug funnel we used at 64SQRS</div>
-              <div className="muted">Precision over panic.</div>
-            </div>
-            <div className="card">
-              <div className="card-title">Writing PRDs that move teams</div>
-              <div className="muted">Frictionless handoffs.</div>
+            <div>
+              <h4 className="section-title">Process</h4>
+              <ul className="bullets">
+                <li>Discovery → interviews, data review, constraints.</li>
+                <li>Define → PRD, scope, milestones.</li>
+                <li>Design → flows, edge cases, handoffs.</li>
+                <li>Deliver → sprints, QA, release plan.</li>
+                <li>Measure → dashboards, learnings, next bets.</li>
+              </ul>
             </div>
           </div>
-          <div className="cta-row"><a className="button" href="/build-log">View All Articles →</a></div>
         </motion.div>
       </div>
 
