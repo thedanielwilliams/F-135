@@ -81,10 +81,10 @@ body { overflow-x: hidden; }
 .chip:hover { transform: translateY(-2px); background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); }
 
 /* Hero typography clamp and polish */
-.hero-title { font-size: clamp(28px, 9vw, 56px); line-height: 1.1; background: linear-gradient(90deg, var(--text), #9fdfff); -webkit-background-clip: text; color: transparent; }
-.hero-sub { font-size: clamp(14px, 4.2vw, 18px); opacity: 0.86; }
-.cta-row { display: flex; flex-direction: column; gap: .75rem; }
-@media (min-width: 640px) { .cta-row { flex-direction: row; gap: 1rem; } }
+.hero-title { font-size: clamp(28px, 9vw, 56px); line-height: 1.1; background: linear-gradient(90deg, var(--text), #9fdfff); -webkit-background-clip: text; color: transparent; margin-bottom: 10px; }
+.hero-sub { font-size: clamp(14px, 4.2vw, 18px); opacity: 0.86; max-width: 680px; margin: 8px auto 14px; }
+.cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+@media (min-width: 640px) { .cta-row { gap: 14px; } }
 
 /* Prevent horizontal overflow */
 body, .hero { overflow-x: hidden; }
@@ -152,6 +152,20 @@ body, .hero { overflow-x: hidden; }
 .patch:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
 .patch.expand { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
 
+/* Tap-to-expand patch cards (no 3D flip) */
+.patch-card { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.05); padding: 12px; cursor: pointer; transition: background 160ms ease, transform 160ms ease; }
+.patch-card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); }
+.patch-head { display: grid; place-items: center; text-align: center; gap: 4px; }
+.patch-details { display: grid; gap: 8px; text-align: center; opacity: 0; pointer-events: none; transform: translateY(-4px); transition: opacity 160ms ease, transform 160ms ease; margin-top: 8px; }
+.patch-card.is-open .patch-details { opacity: 1; pointer-events: auto; transform: translateY(0); }
+@media (hover:hover) { .patch-card:hover .patch-details { opacity: 1; transform: translateY(0); pointer-events: auto; } }
+@media (hover:none) { .patch-card { will-change: transform; } }
+
+/* Mission card with inline log expansion */
+.mission-card { position: relative; overflow: hidden; }
+.mission-log { display: none; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 12px; opacity: 0; max-height: 0; transition: opacity 200ms ease, max-height 200ms ease; }
+.mission-card.is-open .mission-log { display: block; opacity: 1; max-height: 800px; }
+
 /* Signals and cards */
 .card { background: #0b0f1a; border: 1px solid rgba(255,255,255,0.06); border-radius: .75rem; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
 .gradient-surface { background: linear-gradient(180deg, rgba(89,112,255,0.15), rgba(0,0,0,0)); }
@@ -180,11 +194,7 @@ body, .hero { overflow-x: hidden; }
 .runway-line { height: 2px; background: linear-gradient(90deg, transparent, var(--afterburn-blue), transparent); animation: pulse 2s ease-in-out infinite; opacity: 0.6; }
 @keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
 .engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
-.patch-face { position: absolute; inset: 0; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.05); backface-visibility: hidden; display: grid; place-items: center; padding: 12px; transition: transform 0.5s ease; }
-.patch-front { transform: rotateY(0deg); }
-.patch-back { transform: rotateY(180deg); }
-.patch:hover .patch-front { transform: rotateY(-180deg); }
-.patch:hover .patch-back { transform: rotateY(0deg); }
+
 .patch-title { font-weight: 600; text-align: center; }
 .patch-award { color: var(--muted); font-size: 12px; }
 .patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }
@@ -202,11 +212,25 @@ body, .hero { overflow-x: hidden; }
 .runway-line { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); animation: pulse 2s ease-in-out infinite; opacity: 0.6; }
 @keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
 .engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
-.patch-face { position: absolute; inset: 0; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.05); backface-visibility: hidden; display: grid; place-items: center; padding: 12px; transition: transform 0.5s ease; }
-.patch-front { transform: rotateY(0deg); }
-.patch-back { transform: rotateY(180deg); }
-.patch:hover .patch-front { transform: rotateY(-180deg); }
-.patch:hover .patch-back { transform: rotateY(0deg); }
+
+.patch-title { font-weight: 600; text-align: center; }
+.patch-award { color: var(--muted); font-size: 12px; }
+.patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }
+.micro-modal-body { color: var(--muted); margin-bottom: 10px; }
+.signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.signal { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 12px; text-align: center; background: rgba(255,255,255,0.03); }
+.signal-label { color: var(--muted); font-size: 12px; }
+.signal-value { font-weight: 600; font-size: 18px; }
+.list-item { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; background: rgba(255,255,255,0.03); }
+.list-title { font-weight: 600; }
+.list-note { color: var(--muted); font-size: 12px; }
+.micro-modal-body { color: var(--muted); margin-bottom: 10px; }
+.mission-chips { display: flex; gap: 8px; justify-content: center; margin-top: 10px; }
+.runway { position: relative; margin-top: 24px; }
+.runway-line { height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); animation: pulse 2s ease-in-out infinite; opacity: 0.6; }
+@keyframes pulse { 0%,100% { opacity: 0.6 } 50% { opacity: 1 } }
+.engine-trail { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.06), transparent 40%); }
+
 .patch-title { font-weight: 600; text-align: center; }
 .patch-award { color: var(--muted); font-size: 12px; }
 .patch-desc { text-align: center; color: var(--muted); margin-bottom: 8px; }

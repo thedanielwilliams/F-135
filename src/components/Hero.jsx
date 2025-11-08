@@ -28,12 +28,7 @@ export default function Hero() {
             <a className="button accent" href="/#projects">View Flight Logs</a>
             <a className="button" href="/#engine-room">Enter Engine Room</a>
           </div>
-          <div style={{ marginTop: 12 }} className="badge">I’m an F‑135 Product Engine — built for precision, speed, and lift.</div>
-          <div className="mission-chips">
-            <a href="/projects" className="chip">64SQRS</a>
-            <a href="/projects" className="chip">Archived</a>
-            <a href="/projects" className="chip">Kukeat</a>
-          </div>
+          {/* Mission chips removed as requested */}
         </motion.div>
 
         {/* Animated runway line */}

@@ -13,7 +13,7 @@ export default function AltitudeTrack({ nodes = [] }) {
               <div className="bubble">
                 <div className="bubble-title">{n.title}</div>
                 <div className="bubble-meta">{n.year} • {n.metric}</div>
-                <a href="/projects" className="bubble-cta">Open Flight Log →</a>
+                <a href={n.link || '/projects'} className="bubble-cta">Open Flight Log →</a>
               </div>
             </motion.div>
           ))}
@@ -27,7 +27,7 @@ export default function AltitudeTrack({ nodes = [] }) {
             <div className="altitude-content">
               <div className="bubble-title">{n.title}</div>
               <div className="bubble-meta">{n.metric}</div>
-              <a href="/projects" className="bubble-cta">Open Flight Log →</a>
+              <a href={n.link || '/projects'} className="bubble-cta">Open Flight Log →</a>
             </div>
           </div>
         ))}

@@ -7,19 +7,20 @@ const patches = [
 ]
 
 export default function HackathonPatches() {
-  const [expanded, setExpanded] = useState(null)
+  const [open, setOpen] = useState(null)
+  const toggle = (i) => setOpen(open === i ? null : i)
   return (
     <section id="hackathons" className="section">
       <div className="container">
         <h2>Test Flights</h2>
-        <div className="patches-grid">
-          {patches.map((p, idx) => (
-            <div key={p.title} className={`patch ${expanded === idx ? 'expand' : ''}`} onClick={() => setExpanded(expanded === idx ? null : idx)}>
-              <div className="patch-face patch-front">
+        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
+          {patches.map((p, i) => (
+            <div key={p.title} className={`patch-card ${open === i ? 'is-open' : ''}`} onClick={() => toggle(i)}>
+              <div className="patch-head">
                 <div className="patch-title">{p.title}</div>
                 <div className="patch-award">{p.award}</div>
               </div>
-              <div className="patch-face patch-back">
+              <div className="patch-details">
                 <div className="patch-desc">{p.desc}</div>
                 <a href="/hackathons" className="button">See All Flights →</a>
               </div>
