@@ -8,7 +8,7 @@ export default function BuildLog() {
             Occasional essays on product craft and momentum.
           </p>
           <p>
-            Coming soon: “What emerging PMs can learn from hackathons.”
+            Read: <a href="https://medium.com/@onikoladanielwilliams/what-emerging-product-managers-can-learn-from-hackathons-b21114f4af01" target="_blank" rel="noopener noreferrer">What emerging PMs can learn from hackathons</a>.
           </p>
         </div>
       </div>

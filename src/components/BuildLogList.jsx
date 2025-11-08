@@ -1,5 +1,5 @@
 const entries = [
-  { title: 'What emerging PMs learn from hackathons', note: '“Shipping beats theory.”' },
+  { title: 'What emerging PMs can learn from hackathons', note: '“Shipping beats theory.”', href: 'https://medium.com/@onikoladanielwilliams/what-emerging-product-managers-can-learn-from-hackathons-b21114f4af01' },
   { title: 'How I write PRDs that move teams', note: '“Frictionless handoffs.”' },
   { title: 'The bug funnel we used at 64SQRS', note: '“Precision over panic.”' },
 ]
@@ -12,7 +12,11 @@ export default function BuildLogList() {
         <div className="build-list">
           {entries.map((e) => (
             <div key={e.title} className="build-list-item">
-              <div className="list-title">{e.title}</div>
+              {e.href ? (
+                <a href={e.href} target="_blank" rel="noopener noreferrer" className="list-title">{e.title}</a>
+              ) : (
+                <div className="list-title">{e.title}</div>
+              )}
               <div className="list-note">{e.note}</div>
             </div>
           ))}
