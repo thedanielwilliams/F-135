@@ -3,7 +3,7 @@ import EngineRoom from '../components/EngineRoom.jsx'
 import ProjectTeasers from '../components/ProjectTeasers.jsx'
 import HackathonPatches from '../components/HackathonPatches.jsx'
 import BuildLogList from '../components/BuildLogList.jsx'
-import Signals from '../components/Signals.jsx'
+// import Signals from '../components/Signals.jsx'
 import ContactBar from '../components/ContactBar.jsx'
 import ScrollSpy from '../components/ScrollSpy.jsx'
 
@@ -36,7 +36,7 @@ export default function Home() {
       <ProjectTeasers />
       <HackathonPatches />
       <BuildLogList />
-      <Signals />
+      {/* <Signals /> */}
       <ContactBar />
     </div>
   )

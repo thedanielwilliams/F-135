@@ -33,7 +33,10 @@ export default function Projects() {
   return (
     <section className="section">
       <div className="container">
-        <h2>Recent Projects</h2>
+        <h2>Selected Projects</h2>
+        <p className="muted" style={{ marginTop: 6, maxWidth: 740 }}>
+          I've carefully selected a few projects to showcase. I believe these projects will give context as much as they will raise questions. Contact me if you'd like some clarifications. I'm currently open to new opportunities.
+        </p>
         <div className="grid cols-2" style={{ marginTop: 18 }}>
           <MissionCard
             title="LockedIn"
