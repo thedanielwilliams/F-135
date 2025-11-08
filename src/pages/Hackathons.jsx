@@ -6,8 +6,8 @@ export default function Hackathons() {
       name: 'BloodChain', award: '₦5M Prize', year: 2025, role: 'Product Lead', codename: 'The Podium Hackathon', date: 'August 2025',
       objective: 'Design and deploy Nigeria’s first AI-powered blood donation and logistics platform — a system capable of connecting donors, hospitals, and emergencies in real time.',
       paragraphs: [
-        'The mission began with turbulence — limited time, high stakes, and a five-person crew from different disciplines. As Product Lead, I set the course: a vision that tied technology to empathy. Within forty-eight hours, we defined user journeys, built prototypes, and aligned every sprint around one goal — save time, save lives.',
-        'I directed the pitch strategy like a final descent — tight, timed, and deliberate. The result: a clean landing and a ₦500,000 prize fund. But more than that, BloodChain left the runway as a nationwide health solution with genuine potential for real-world impact.'
+        'The mission began with turbulence, we had limited time, high stakes, and a five-person crew from different disciplines. As Product Lead, I set the course: a vision that tied technology to empathy. Within forty-eight hours, we defined user journeys, built prototypes, and aligned every sprint around one goal — save time, save lives.',
+        'I directed the pitch strategy like a final descent, tight, timed, and deliberate. The result: a clean landing and a ₦500,000 prize fund. But more than that, BloodChain left the runway as a nationwide health solution with genuine potential for real-world impact.'
       ]
     },
     {
@@ -34,7 +34,7 @@ export default function Hackathons() {
   return (
     <section className="section">
       <div className="container">
-        <h2>Test Flights</h2>
+        <h2>Hackathons</h2>
         <div className="grid cols-3" style={{ marginTop: 18 }}>
           {items.map((it, idx) => (
             <div key={it.name} className={`card mission-card ${open === idx ? 'is-open' : ''}`}>

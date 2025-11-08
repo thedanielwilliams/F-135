@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="section">
       <div className="container">
-        <motion.h2 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>The Engine Room</motion.h2>
+        <motion.h2 initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>About Me</motion.h2>
         <div className="grid cols-2" style={{ alignItems: 'start', marginTop: 18 }}>
           <div className="card" style={{ lineHeight: 1.8 }}>
             <p>

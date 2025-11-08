@@ -5,8 +5,8 @@ function Gauge({ label, value }) {
   const circumference = 2 * Math.PI * 36
   const dash = (value / 100) * circumference
   return (
-    <div className="gauge">
-      <svg width="96" height="96" viewBox="0 0 96 96">
+    <div className="gauge" role="meter" aria-label={`${label} level`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
+      <svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">
         <circle cx="48" cy="48" r="36" stroke="rgba(255,255,255,0.12)" strokeWidth="10" fill="none" />
         <motion.circle
           cx="48" cy="48" r="36" stroke="var(--accent)" strokeWidth="10" fill="none"
@@ -25,48 +25,23 @@ function Gauge({ label, value }) {
 const systems = [
   {
     icon: '🧭',
-    title: 'Navigation Systems (Product)',
-    items: [
-      'PRDs & Roadmapping: Translating ideas into actionable flight paths.',
-      'Agile & Sprint Planning: Keeping teams in sync and velocity high.',
-      'Feature Prioritisation: Balancing ambition with focus.'
-    ]
+    title: 'Product',
+    body: 'I turn ideas into structured execution — defining roadmaps, writing clear PRDs, and driving agile sprints that keep teams moving in sync and focused on measurable outcomes.'
   },
   {
     icon: '🎯',
-    title: 'Sensors (Research & Design)',
-    items: [
-      'User Interviews & Wireframing: Grounding design in real insights.',
-      'Figma & Usability Testing: Creating journeys that move friction-free.',
-      'Feedback Loops: Turning observation into iteration.'
-    ]
+    title: 'Research & Design',
+    body: 'I ground product decisions in user insight — designing flows that are intuitive, validated through testing, and informed by continuous feedback to remove friction and enhance usability.'
   },
   {
     icon: '⚙️',
-    title: 'Engines (Growth)',
-    items: [
-      'Go-to-Market Strategy: Positioning products for maximum thrust.',
-      'Branding & SEO: Designing identity that attracts and retains users.',
-      'Launch Metrics: Measuring lift-off and adjusting altitude.'
-    ]
+    title: 'Technology',
+    body: 'I collaborate with engineers to build fast, stable systems — crafting technical documentation, mapping dependencies, and leading deployments that ensure reliable launches and scalable performance.'
   },
   {
-    icon: '🧩',
-    title: 'Telemetry (Data)',
-    items: [
-      'SQL & Mixpanel: Tracking what matters.',
-      'Analytics: Turning data into decision fuel.',
-      'Reporting Systems: Visualising velocity and impact.'
-    ]
-  },
-  {
-    icon: '👥',
-    title: 'Crew (Soft Skills)',
-    items: [
-      'Leadership: Aligning teams around a single mission.',
-      'Storytelling: Making the “why” clear at every stage.',
-      'Teamwork: Building trust that accelerates execution.'
-    ]
+    icon: '📊',
+    title: 'Data',
+    body: 'I use data as navigation — tracking performance through SQL and analytics dashboards, identifying trends through cohort analysis, and translating metrics into actionable strategy for growth and iteration.'
   }
 ]
 
@@ -74,11 +49,24 @@ export default function EngineRoom() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return
     const mq = window.matchMedia('(max-width: 640px)')
     const handler = (e) => setIsMobile(e.matches)
+    // Initialize state
     handler(mq)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
+    // Add listener with browser compatibility
+    if (mq.addEventListener) {
+      mq.addEventListener('change', handler)
+    } else if (mq.addListener) {
+      mq.addListener(handler)
+    }
+    return () => {
+      if (mq.removeEventListener) {
+        mq.removeEventListener('change', handler)
+      } else if (mq.removeListener) {
+        mq.removeListener(handler)
+      }
+    }
   }, [])
 
   return (
@@ -87,7 +75,7 @@ export default function EngineRoom() {
         <div className="engine-room">
           {/* Left column: headline + paragraphs */}
           <div>
-            <h2>✈️ Engine Room</h2>
+            <h2>About Me</h2>
             <div className="engine-headline">I build and operate product engines that launch fast, fly smooth, and land results.</div>
             <div className="engine-sub">
               <p>From discovery to delivery, I help teams stay aligned on the problem, narrative, and plan.</p>
@@ -108,22 +96,18 @@ export default function EngineRoom() {
         <div className="systems-grid">
           {systems.map((sys) => (
             <details key={sys.title} className="system-card" open={!isMobile}>
-              <summary className="system-summary">
+              <summary className="system-summary" aria-label={`Toggle ${sys.title}`}>
                 <span className="system-icon" aria-hidden>{sys.icon}</span>
                 <span className="system-title">{sys.title}</span>
               </summary>
-              <ul className="system-items">
-                {sys.items.map((txt, i) => (
-                  <li key={i}>{txt}</li>
-                ))}
-              </ul>
+              <div className="system-text">
+                <p>{sys.body}</p>
+              </div>
             </details>
           ))}
         </div>
 
-        <div style={{ marginTop: 16 }}>
-          <a href="#projects" className="button">View Flight Logs →</a>
-        </div>
+        {/* Removed CTA button */}
       </div>
     </section>
   )
