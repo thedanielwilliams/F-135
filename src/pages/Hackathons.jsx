@@ -15,15 +15,15 @@ export default function Hackathons() {
       objective: 'Turn waste into wearable innovation — an eco‑fashion MVP crafted from upcycled plastic.',
       paragraphs: [
         'I assembled a small but driven team and led the first sprint on user research and feature planning. We created personas that felt like real customers, not slides.',
-        'I wrote the mission specs — the deck, the UX walkthrough, the roadmap — each piece wired for clarity and lift.',
-        'When we launched, XBag cut through a crowd of over 5,000 participants and landed 3rd place. The judges called our vision “sharp, scalable, and human.” I called it a reminder that sustainability can move fast — if the product flies straight.'
+        'I wrote the mission specs, the deck, the UX walkthrough, and the roadmap.',
+        'When we submitted, XBag cut through a crowd of over 5,000 participants and landed 3rd place. The judges called our vision “sharp, scalable, and human.” I called it a reminder that sustainability can move fast — if the product flies straight.'
       ]
     },
     {
       name: 'Harmony DAO', award: 'Top 5', year: 2021, role: 'Product Lead', codename: 'Team BuChain', date: 'Dec 2020 – Oct 2021',
       objective: 'Build a blockchain‑based identity system capable of giving users a single, verifiable digital self.',
       paragraphs: [
-        'Harmony DAO was a long‑range operation — ten months of experimentation and re‑alignment. I owned the roadmap from take‑off to landing, refining features and leading Figma prototypes that mapped the chain between trust and accessibility.',
+        'Harmony DAO was a long‑range operation, ten months of experimentation and re‑alignment. I owned the roadmap from take‑off to landing, refining features and leading Figma prototypes that mapped the chain between trust and accessibility.',
         'Our team ranked Top 5 out of 60+ entries, but the win was in the proof of scalability we delivered. The pitch showed not just how the system worked, but how it could hold identity at the speed of trust.'
       ]
     }

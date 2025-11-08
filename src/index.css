@@ -123,9 +123,59 @@ body, .hero { overflow-x: hidden; }
 .altitude-track .bubble-cta { display: inline-block; margin-top: 8px; color: var(--afterburn-blue); }
 
 /* EngineRoom responsiveness */
-.engine-room { display: grid; gap: 1.5rem; }
-@media (min-width: 1024px) { .engine-room { grid-template-columns: 1.2fr 1fr; } }
-.gauge-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .75rem; }
+/* Engine Room new layout */
+.engine-room {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.engine-headline {
+  font-weight: 600;
+  font-size: clamp(20px, 3.2vw, 28px);
+  line-height: 1.25;
+  margin: 4px 0 12px;
+}
+
+.engine-sub p { margin: 8px 0; opacity: 0.9; }
+
+.gauge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(96px, 1fr));
+  gap: 16px;
+  justify-items: center;
+}
+
+.gauge { position: relative; display: grid; place-items: center; }
+.gauge-value { position: absolute; font-size: 14px; font-weight: 600; }
+.gauge-label { font-size: 12px; opacity: 0.8; margin-top: 8px; }
+
+/* Systems grid */
+.systems-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.system-card { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 8px 12px; background: rgba(255,255,255,0.02); }
+.system-summary { display: flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; }
+.system-summary::-webkit-details-marker { display: none; }
+.system-icon { font-size: 18px; }
+.system-title { font-weight: 600; }
+.system-items { margin: 8px 0 0 0; padding-left: 18px; opacity: 0.9; }
+.system-items li { margin: 4px 0; }
+
+/* Mobile styles */
+@media (max-width: 640px) {
+  .engine-room { grid-template-columns: 1fr; }
+  .engine-headline { font-size: clamp(28px, 8vw, 48px); }
+  .gauge-grid { grid-template-columns: repeat(3, 1fr); }
+  .systems-grid { grid-template-columns: 1fr; }
+  .gauge-label-mobile { display: none; }
+}
+
 @media (min-width: 640px) { .gauge-grid { gap: 1rem; } }
 .gauge { min-width: 120px; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: .75rem; padding: .5rem; }
 .gauge-label-mobile { display: block; font-size: .8rem; opacity: .7; margin-top: .25rem; }
