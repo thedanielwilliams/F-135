@@ -29,16 +29,12 @@ function Nav() {
             <div className="brand-title">Daniel Williams</div>
             <div className="brand-sub">Product Manager — Lagos</div>
           </div>
-          {/* Mobile brand (clickable to Home) */}
-          <NavLink to="/" className="mobile-only brand-link" onClick={close}>
-            <div className="brand-title">Daniel Williams</div>
-            <div className="brand-sub">Product Manager — Lagos</div>
-          </NavLink>
+          {/* Mobile: no brand text; only Menu button (on the right) */}
         </div>
         <div className="menu">
           {/* Menu toggle only on mobile */}
           <button className="button menu-toggle mobile-only" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
-          {/* Desktop links include Home */}
+          {/* Desktop links only (no Menu button) */}
           <div className="menu-links desktop-only">
             <NavLink to="/" onClick={close}>Home</NavLink>
             <NavLink to="/about" onClick={close}>About me</NavLink>

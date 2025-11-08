@@ -19,6 +19,10 @@
 
 /* Optional layout tweaks */
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.menu-links { display: flex; gap: 12px; align-items: center; }
+/* Scope display to desktop-only menu to avoid mobile override */
+.menu-links.desktop-only { display: flex; gap: 12px; align-items: center; }
+
+/* Mobile header Home link styling */
+.home-link { font-weight: 700; margin-right: 8px; }
 
 .footer small { display: block; margin-top: 8px; }
