@@ -1,28 +1,23 @@
-import { useState } from 'react'
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const update = (e) => setForm({ ...form, [e.target.name]: e.target.value })
-  const submit = (e) => { e.preventDefault(); console.log('Contact form', form); alert('Thanks for reaching out — I’ll get back to you.'); }
+  const email = 'daniel@example.com' // Update to your real email
   return (
     <section className="section">
-      <div className="container" style={{ maxWidth: 760 }}>
-        <h2>Landing Gear</h2>
-        <p style={{ color: 'var(--muted)' }}>Got a mission that needs lift? Let’s get it off the ground.</p>
-        <form onSubmit={submit} className="card" style={{ display: 'grid', gap: 12 }}>
-          <input name="name" value={form.name} onChange={update} placeholder="Your name" required className="field" />
-          <input type="email" name="email" value={form.email} onChange={update} placeholder="Your email" required className="field" />
-          <textarea name="message" value={form.message} onChange={update} rows={6} placeholder="What’s the mission?" className="field" />
-          <div style={{ display: 'flex', gap: 12 }}>
-            <button type="submit" className="button accent">Deploy message</button>
-            <a className="button" href="mailto:daniel@example.com">Email</a>
-            <a className="button" href="https://www.linkedin.com/in/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <div className="container" style={{ maxWidth: 720 }}>
+        <h2>Contact me</h2>
+        <p className="muted">I’m quickest on email. Send me a note and I’ll reply.</p>
+
+        <div className="card" style={{ display: 'grid', gap: 16, alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+            <a className="button primary" href={`mailto:${email}`}>Send me a mail</a>
+            <span className="badge">F‑135 Engine</span>
           </div>
-        </form>
+          <small className="muted">Tip: if this doesn’t open your mail app, copy this address: <code style={{ userSelect: 'all' }}>{email}</code></small>
+        </div>
       </div>
+
       <style>{`
-        .field { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 14px; color: var(--text); }
-        .field::placeholder { color: var(--muted); }
+        .badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: var(--text); border-radius: 999px; padding: 6px 10px; font-size: 12px; }
+        .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 16px; }
       `}</style>
     </section>
   )

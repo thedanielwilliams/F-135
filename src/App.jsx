@@ -33,12 +33,10 @@ function Nav() {
         <div className="menu">
           <button className="button menu-toggle" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
           <div className="menu-links">
-            <NavLink to="/" end onClick={close}>Home</NavLink>
-            <a href="/#engine-room" onClick={close}>Engine Room</a>
+            <NavLink to="/about" onClick={close}>About me</NavLink>
             <NavLink to="/projects" onClick={close}>Projects</NavLink>
-            <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
-            <NavLink to="/build-log" onClick={close}>Build Log</NavLink>
-            <NavLink to="/contact" className="button primary" onClick={close}>Contact</NavLink>
+            <NavLink to="/build-log" onClick={close}>Articles</NavLink>
+            <NavLink to="/contact" className="button primary" onClick={close}>Contact me</NavLink>
           </div>
         </div>
       </div>
@@ -50,12 +48,10 @@ function Nav() {
               <button className="button" onClick={close}>Close</button>
             </div>
             <div className="drawer-links">
-              <a href="/" onClick={close}>Home</a>
-              <a href="/#engine-room" onClick={close}>Engine Room</a>
+              <a href="/about" onClick={close}>About me</a>
               <a href="/projects" onClick={close}>Projects</a>
-              <a href="/hackathons" onClick={close}>Hackathons</a>
-              <a href="/build-log" onClick={close}>Build Log</a>
-              <a href="/contact" className="button primary" onClick={close}>Contact</a>
+              <a href="/build-log" onClick={close}>Articles</a>
+              <a href="/contact" className="button primary" onClick={close}>Contact me</a>
             </div>
           </div>
         </div>
