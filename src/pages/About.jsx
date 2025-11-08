@@ -19,9 +19,9 @@ export default function About() {
           </div>
 
           <div className="grid cols-3" style={{ gap: 12 }}>
-            <Gauge label="Speed" value={93} suffix="%" sub="Delivery Rate" color="var(--afterburn-blue)" />
-            <Gauge label="Precision" value={93} suffix="%" sub="Bug‑Free Deployments" color="var(--accent-orange)" />
-            <Gauge label="Lift" value={100} suffix="%" sub="Growth Potential" color="#9fdfff" />
+            <Gauge label="Design" value={77} suffix="%" sub="UX craft & systems" color="var(--afterburn-blue)" />
+            <Gauge label="Documentation" value={88} suffix="%" sub="PRDs, specs, clarity" color="var(--accent-orange)" />
+            <Gauge label="Technology" value={95} suffix="%" sub="Product engineering" color="#9fdfff" />
           </div>
         </div>
       </div>

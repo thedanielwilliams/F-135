@@ -67,9 +67,9 @@ export default function EngineRoom() {
             </p>
           </div>
           <div className="gauge-grid">
-            <Gauge label="Speed" value={93} />
-            <Gauge label="Precision" value={93} />
-            <Gauge label="Lift" value={100} />
+            <Gauge label="Design" value={77} />
+            <Gauge label="Documentation" value={88} />
+            <Gauge label="Technology" value={95} />
           </div>
         </div>
 

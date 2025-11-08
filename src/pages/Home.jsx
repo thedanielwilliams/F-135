@@ -29,7 +29,7 @@ export default function Home() {
           <h2>Recent Deployments</h2>
           <AltitudeTrack nodes={[
             { year: 2025, title: '64SQRS', metric: '93% bug-free deployment', link: 'https://hurricane-woolen-96d.notion.site/Sport64sqs-13c22c4ad911806c9ef6f3efbf492e4c?source=copy_link' },
-            { year: 2024, title: 'Archived', metric: 'Beta feedback loop' },
+            { year: 2024, title: 'Archived', metric: 'Beta feedback loop', link: 'https://hurricane-woolen-96d.notion.site/Archived-23b22c4ad9118011a6befe2257d07838?source=copy_link' },
             { year: 2023, title: 'Kukeat', metric: '₦250k win', link: 'https://hurricane-woolen-96d.notion.site/Ideation-to-MVP-13c22c4ad91181c68e81f5ed82c3df2f?source=copy_link' },
           ]} />
         </div>
