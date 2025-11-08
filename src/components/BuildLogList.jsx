@@ -17,7 +17,7 @@ export default function BuildLogList() {
             </div>
           ))}
         </div>
-        <a href="/build-log" className="button">Open Build Log →</a>
+       
       </div>
     </section>
   )

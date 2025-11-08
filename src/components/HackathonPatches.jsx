@@ -12,7 +12,7 @@ export default function HackathonPatches() {
   return (
     <section id="hackathons" className="section">
       <div className="container">
-        <h2>Test Flights</h2>
+        <h2>Hackathons</h2>
         <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
           {patches.map((p, i) => (
             <div key={p.title} className={`patch-card ${open === i ? 'is-open' : ''}`} onClick={() => toggle(i)}>

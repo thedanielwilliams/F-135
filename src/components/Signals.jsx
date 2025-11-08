@@ -4,8 +4,8 @@ export default function Signals() {
       <div className="container">
         <div className="signals">
           <div className="signal">
-            <div className="signal-label">Missions Shipped</div>
-            <div className="signal-value">12+</div>
+            <div className="signal-label">Total Sprints</div>
+            <div className="signal-value">1000+</div>
           </div>
           <div className="signal">
             <div className="signal-label">Avg Velocity</div>
