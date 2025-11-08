@@ -26,7 +26,7 @@ function Nav() {
         <div className="brand">
           <motion.span initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="badge">F‑135</motion.span>
           <div>
-            <div className="brand-title">Daniel Williams Onikola</div>
+            <div className="brand-title">Daniel Williams</div>
             <div className="brand-sub">Product Manager — Lagos</div>
           </div>
         </div>

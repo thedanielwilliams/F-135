@@ -2,6 +2,7 @@ export default function Signals() {
   return (
     <section id="signals" className="section">
       <div className="container">
+        <h2>Metrics</h2>
         <div className="signals">
           <div className="signal">
             <div className="signal-label">Total Sprints</div>
