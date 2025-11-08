@@ -1,0 +1,14 @@
+/* Layout shell for cockpit-style navigation */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main {
+  flex: 1;
+}
+
+.nav a { font-weight: 600; }
+.nav .brand-title { letter-spacing: 0.2px; }
+
+.footer small { display: block; margin-top: 8px; }
