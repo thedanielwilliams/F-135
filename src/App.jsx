@@ -35,6 +35,7 @@ function Nav() {
           <div className="menu-links">
             <NavLink to="/about" onClick={close}>About me</NavLink>
             <NavLink to="/projects" onClick={close}>Projects</NavLink>
+            <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
             <NavLink to="/build-log" onClick={close}>Articles</NavLink>
             <NavLink to="/contact" className="button primary" onClick={close}>Contact me</NavLink>
           </div>
@@ -48,10 +49,11 @@ function Nav() {
               <button className="button" onClick={close}>Close</button>
             </div>
             <div className="drawer-links">
-              <a href="/about" onClick={close}>About me</a>
-              <a href="/projects" onClick={close}>Projects</a>
-              <a href="/build-log" onClick={close}>Articles</a>
-              <a href="/contact" className="button primary" onClick={close}>Contact me</a>
+              <NavLink to="/about" onClick={close}>About me</NavLink>
+              <NavLink to="/projects" onClick={close}>Projects</NavLink>
+              <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
+              <NavLink to="/build-log" onClick={close}>Articles</NavLink>
+              <NavLink to="/contact" className="button primary" onClick={close}>Contact me</NavLink>
             </div>
           </div>
         </div>

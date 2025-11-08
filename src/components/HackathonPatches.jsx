@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const patches = [
   { title: 'BloodChain — The Podium Hackathon', award: 'Winner — ₦500,000 prize', desc: 'Defined product vision for Nigeria’s first AI blood donation + logistics platform; led 5-person team and directed pitch strategy.' },
@@ -24,7 +25,7 @@ export default function HackathonPatches() {
               </div>
               <div className="patch-details">
                 <div className="patch-desc">{p.desc}</div>
-                <a href="/hackathons" className="button">View Details →</a>
+                <NavLink to="/hackathons" className="button">View Details →</NavLink>
               </div>
             </div>
           ))}

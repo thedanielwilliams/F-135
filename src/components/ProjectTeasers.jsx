@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { NavLink } from 'react-router-dom'
 
 const missions = [
   { title: 'LockedIn', year: 2025, brief: 'Real-time partner focus sessions; gamified accountability.', image: '/LockedIn.jpg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link' },
@@ -22,7 +23,7 @@ export default function ProjectTeasers() {
               <div className="card-title">{m.title} <span className="badge">{m.year}</span></div>
               <p className="muted">{m.brief}</p>
               <div className="card-cta">
-                <a href={m.link || '/projects'} className="button">Open Log →</a>
+                <NavLink to={m.link || '/projects'} className="button">Open Log →</NavLink>
                 {m.docLink && (
                   <a href={m.docLink} className="button" target="_blank" rel="noopener noreferrer">Documentation</a>
                 )}
