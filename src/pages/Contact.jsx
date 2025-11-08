@@ -11,7 +11,7 @@ export default function Contact() {
             <a className="button primary" href={`mailto:${email}`}>Send me a mail</a>
             <span className="badge">F‑135 Engine</span>
           </div>
-          <small className="muted">Tip: if this doesn’t open your mail app, copy this address: <code style={{ userSelect: 'all' }}>{email}</code></small>
+          <small className="muted">Tip: if this doesn’t open your mail app, copy this address: onikoladanielwilliams@gmail.com<code style={{ userSelect: 'all' }}>{email}</code></small>
         </div>
       </div>
 
