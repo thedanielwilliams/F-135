@@ -12,6 +12,7 @@ export default function ProjectTeasers() {
     <section id="projects" className="section">
       <div className="container">
         <h2>Project</h2>
+        <p className="section-subtext">Here are a few projects I’ve worked on — plus experiments I’ve shipped. I enjoy building with strong teams and learning in public.</p>
         <div className="projects-grid">
           {missions.map((m) => (
             <motion.div key={m.title} className="card" whileHover={{ y: -4 }}>
@@ -36,6 +37,7 @@ export default function ProjectTeasers() {
         @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
         @media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
 
+        .section-subtext { color: var(--muted); margin-top: 4px; margin-bottom: 12px; }
         .media-16x9 { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
         .media-16x9 img { width: 100%; height: 100%; object-fit: cover; display: block; }
       `}</style>

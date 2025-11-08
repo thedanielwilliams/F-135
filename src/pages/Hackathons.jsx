@@ -25,6 +25,18 @@ export default function Hackathons() {
         'Owned the product roadmap, defined feature scope, and co-led front-end prototyping in Figma.',
         'Delivered a comprehensive pitch to judges, showcasing product-market fit and scalability; ranked Top 5 out of 60+ teams.'
       ]
+    },
+    {
+      name: 'HRecords', award: 'Social Good — Runner‑up — $1,000', year: 2022, role: 'Product Lead', codename: 'EVMxIdeathon', date: '2016 inspiration → 2022 Ideathon',
+      objective: 'Use blockchain to help African hospitals store patient data and track inventory.',
+      paragraphs: [
+        'Origin story: In April 2016, a patient in Lagos was denied surgery because nurses couldn’t find his file. Events like this shaped our mission.',
+        'Proposed a ledger‑backed records system that gives hospitals durable access to patient histories while improving inventory traceability.',
+        'What we learned: 8/10 African hospitals record details manually; ~1% of Nigerians can access their medical records; hospitals rarely have the past history of new patients.',
+        'Outcome: Submitted to EVMxIdeathon. Won Social Good runner‑up ($1,000).',
+        'Next steps: Product development, user interviews, beta testing, and launch.',
+        'Built with: React, Node.js, Solidity, IPFS, AOS.'
+      ]
     }
   ]
 
