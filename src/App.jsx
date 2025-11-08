@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Hackathons from './pages/Hackathons.jsx'
-import Skills from './pages/Skills.jsx'
+// import Skills from './pages/Skills.jsx'
 import Contact from './pages/Contact.jsx'
 import BuildLog from './pages/BuildLog.jsx'
 
@@ -29,11 +29,12 @@ function Nav() {
           </div>
         </div>
         <div className="menu">
+          {/* Use anchors to jump to sections on Home */}
           <NavLink to="/" end>Home</NavLink>
-          <NavLink to="/about">About</NavLink>
+          <a href="/#engine-room">Engine Room</a>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/hackathons">Hackathons</NavLink>
-          <NavLink to="/skills">Skills</NavLink>
+          {/* Removed Skills from navbar per redesign */}
           <NavLink to="/build-log">Build Log</NavLink>
           <NavLink to="/contact" className="button primary">Contact</NavLink>
         </div>
@@ -86,7 +87,7 @@ function RouteTransition() {
         <Route path="/about" element={<Page><About /></Page>} />
         <Route path="/projects" element={<Page><Projects /></Page>} />
         <Route path="/hackathons" element={<Page><Hackathons /></Page>} />
-        <Route path="/skills" element={<Page><Skills /></Page>} />
+        {/* <Route path="/skills" element={<Page><Skills /></Page>} /> */}
         <Route path="/build-log" element={<Page><BuildLog /></Page>} />
         <Route path="/contact" element={<Page><Contact /></Page>} />
       </Routes>
