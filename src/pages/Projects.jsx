@@ -8,7 +8,6 @@ function MissionCard({ title, year, mission, outcome, link, docLink }) {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
         <div>
           <div style={{ fontWeight: 700 }}>{title} <span style={{ color: 'var(--muted)', fontWeight: 400 }}>({year})</span></div>
-          <div className="badge">Flight Report</div>
         </div>
         <a href={link} target="_blank" rel="noreferrer" className="button">Open Log →</a>
       </div>
@@ -37,6 +36,14 @@ export default function Projects() {
         <h2>Recent Projects</h2>
         <div className="grid cols-2" style={{ marginTop: 18 }}>
           <MissionCard
+            title="LockedIn"
+            year="2025"
+            mission="Real-time partner focus sessions merging productivity, community, and friendly competition."
+            outcome="Cross-platform MVP launched; 100+ organic downloads within days."
+            link="https://play.google.com/store/apps/details?id=com.lockedinpartner.lockedin&hl=en"
+            docLink="https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link"
+          />
+          <MissionCard
             title="64SQRS"
             year="2025"
             mission="Simplify tournament setup and payment for 150k+ chess players across Africa."
@@ -59,14 +66,6 @@ export default function Projects() {
             outcome="Attracted angel investor interest."
             link="https://kukeat.com"
             docLink="https://hurricane-woolen-96d.notion.site/Ideation-to-MVP-13c22c4ad91181c68e81f5ed82c3df2f?source=copy_link"
-          />
-          <MissionCard
-            title="LockedIn"
-            year="2025"
-            mission="Real-time partner focus sessions merging productivity, community, and friendly competition."
-            outcome="Cross-platform MVP launched; 100+ organic downloads within days."
-            link="https://play.google.com/store/apps/details?id=com.lockedinpartner.lockedin&hl=en"
-            docLink="https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link"
           />
         </div>
         {/* MissionTimeline removed per request */}

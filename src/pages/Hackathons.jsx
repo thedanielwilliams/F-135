@@ -46,10 +46,11 @@ export default function Hackathons() {
     <section className="section">
       <div className="container">
         <h2>Hackathons</h2>
+        <p className="muted" style={{ marginTop: 4, marginBottom: 8 }}>I treat hackathons like secret missions — get in, get it done, get out. Every challenge is a chance to build fast, think clear, and solve real problems. Sometimes the solution saves a life; other times, it sparks something even bigger.</p>
+        <p className="muted" style={{ marginBottom: 12 }}>Here are a few missions I’ve flown.</p>
         <div className="grid cols-3" style={{ marginTop: 18 }}>
           {items.map((it, idx) => (
             <div key={it.name} className={`card mission-card ${open === idx ? 'is-open' : ''}`}>
-              <div className="badge">Mission Patch</div>
               <div style={{ fontWeight: 700, marginTop: 6 }}>{it.name} <span style={{ color: 'var(--muted)', fontWeight: 400 }}>({it.year})</span></div>
               <div style={{ color: 'var(--muted)', marginTop: 4 }}>{it.award}</div>
               <div style={{ marginTop: 8 }}>{it.objective}</div>

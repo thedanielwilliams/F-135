@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 
 const missions = [
+  { title: 'LockedIn', year: 2025, brief: 'Real-time partner focus sessions; gamified accountability.', image: '/LockedIn.jpg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link' },
   { title: '64SQRS', year: 2025, brief: 'MVP in 6 weeks, 93% bug-free launch.', image: '/64sqrs.jpeg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/Sport64sqs-13c22c4ad911806c9ef6f3efbf492e4c?source=copy_link' },
   { title: 'Archived', year: 2024, brief: 'AI research extension; beta feedback loop.', image: '/Archived.jpeg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/Archived-23b22c4ad9118011a6befe2257d07838?source=copy_link' },
   { title: 'Kukeat', year: 2023, brief: '₦250k hackathon win, angel interest.', image: '/Kukeat.jpeg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/Ideation-to-MVP-13c22c4ad91181c68e81f5ed82c3df2f?source=copy_link' },
-  { title: 'LockedIn', year: 2025, brief: 'Real-time partner focus sessions; gamified accountability.', image: '/LockedIn.jpg', link: '/projects', docLink: 'https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link' },
 ]
 
 export default function ProjectTeasers() {
