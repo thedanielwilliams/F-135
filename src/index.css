@@ -1,28 +1,27 @@
 /* Global Theme: F‑135 Product Engine */
 :root {
-  --jet-black: #0D0D0D;
+  --jet-black: #0F0F10;
   --engine-grey: #2C2C2E;
-  --afterburn-blue: #3AB0FF;
-  --mach-orange: #FF6B00;
-  --telemetry-teal: #00C7A4;
+  --accent-orange: #FF6A00;
+  --afterburn-blue: #00B2FF;
   --accent: var(--afterburn-blue);
   --accent-purple: #9D7CFF;
-  --text: #FFFFFF;
-  --muted: #C5C6C7;
+  --text: #EAEAEA;
+  --muted: #A0A0A0;
 
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
 body {
-  /* cockpit-style dark base with subtle blue glow */
   background:
-    radial-gradient(1200px 600px at 70% 10%, color-mix(in oklab, var(--afterburn-blue) 18%, transparent), transparent 35%),
-    linear-gradient(180deg, #0D0D0D 0%, #111213 55%, #101010 100%);
+    radial-gradient(1200px 600px at 70% 10%, rgba(0,178,255,0.08), transparent 35%),
+    linear-gradient(180deg, #0F0F10 0%, #121316 55%, #0B0B0C 100%);
 }
 
-.button.primary { background: var(--afterburn-blue); color: #0D0D0D; border-color: color-mix(in oklab, var(--afterburn-blue) 50%, transparent); }
-.button.primary:hover { background: var(--mach-orange); color: #0D0D0D; border-color: color-mix(in oklab, var(--mach-orange) 50%, transparent); }
+/* Restore original primary button styling (no Mach Orange hover) */
+.button.primary { background: linear-gradient(180deg, #1c1c1e, #2C2C2E); color: var(--text); border-color: rgba(255,255,255,0.16); }
+.button.primary:hover { background: linear-gradient(180deg, #1c1c1e, #2C2C2E); color: var(--text); border-color: rgba(255,255,255,0.16); }
 
 * { box-sizing: border-box; }
 
