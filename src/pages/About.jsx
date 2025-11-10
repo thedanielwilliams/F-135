@@ -20,7 +20,7 @@ export default function About() {
             <div className="about-landing-text">
       
               <p>
-                Here is how I think about it, product management isn’t about features or checklists — it’s about alignment. I help teams stay focused on the problem, design the right process, and deliver results that matter. Over the years, I’ve learned that precision and empathy can coexist — that speed without clarity is noise, and clarity without speed is inertia.
+                Here is how I think about it, product management isn’t about features or checklists, it’s about alignment. I help teams stay focused on the problem, design the right process, and deliver results that matter. Over the years, I’ve learned that precision and empathy can coexist, that speed without clarity is noise, and clarity without speed is inertia.
               </p>
               <div className="cta-row">
                 
