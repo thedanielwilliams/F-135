@@ -1,17 +1,28 @@
 /* Global Theme: F‑135 Product Engine */
 :root {
-  --jet-black: #0F0F10;
+  --jet-black: #0D0D0D;
   --engine-grey: #2C2C2E;
-  --accent-orange: #FF6A00;
-  --afterburn-blue: #00B2FF;
+  --afterburn-blue: #3AB0FF;
+  --mach-orange: #FF6B00;
+  --telemetry-teal: #00C7A4;
   --accent: var(--afterburn-blue);
   --accent-purple: #9D7CFF;
-  --text: #EAEAEA;
-  --muted: #A0A0A0;
+  --text: #FFFFFF;
+  --muted: #C5C6C7;
 
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
+
+body {
+  /* cockpit-style dark base with subtle blue glow */
+  background:
+    radial-gradient(1200px 600px at 70% 10%, color-mix(in oklab, var(--afterburn-blue) 18%, transparent), transparent 35%),
+    linear-gradient(180deg, #0D0D0D 0%, #111213 55%, #101010 100%);
+}
+
+.button.primary { background: var(--afterburn-blue); color: #0D0D0D; border-color: color-mix(in oklab, var(--afterburn-blue) 50%, transparent); }
+.button.primary:hover { background: var(--mach-orange); color: #0D0D0D; border-color: color-mix(in oklab, var(--mach-orange) 50%, transparent); }
 
 * { box-sizing: border-box; }
 
