@@ -28,6 +28,15 @@ export default function Hero() {
       
           </div>
           {/* Mission chips removed as requested */}
+
+          <div style={{ marginTop: 32 }}>
+            <img
+              src="/IMG_9210.jpg"
+              alt="Daniel portrait"
+              className="hero-photo"
+              loading="lazy"
+            />
+          </div>
         </motion.div>
 
         {/* Animated runway line */}

@@ -22,16 +22,6 @@ export default function Home() {
       <ScrollSpy sections={sections} />
       <Hero />
 
-      {/* Inserted photo immediately after Hero section */}
-      <div className="container" style={{ marginTop: 24, marginBottom: 24 }}>
-        <img
-          src="/IMG_9210.jpg"
-          alt="Daniel portrait"
-          className="hero-photo"
-          loading="lazy"
-        />
-      </div>
-
       <EngineRoom />
       <ProjectTeasers />
       <HackathonPatches />
