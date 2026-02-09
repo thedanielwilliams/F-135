@@ -43,7 +43,7 @@ export default function About() {
         {/* 2) How I Think */}
         <motion.div {...fadeUp} style={{ marginTop: 28 }}>
           <h3 className="section-title">How I Think</h3>
-          <p className="muted">I believe good products are built on systems, not guesswork. My process starts from first principles — understanding the root cause of a problem before designing a solution. I map relationships, feedback loops, and trade-offs to make sure what we build isn’t just functional, but sustainable.</p>
+          <p className="muted">I believe good products are built on systems, not guesswork. My process starts from first principles, understanding the root cause of a problem before designing a solution. I map relationships, feedback loops, and trade-offs to make sure what we build isn’t just functional, but sustainable.</p>
           <ul className="bullets" style={{ marginTop: 8 }}>
             <li>Map before building.</li>
             <li>Test assumptions early.</li>
