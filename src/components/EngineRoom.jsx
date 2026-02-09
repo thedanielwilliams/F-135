@@ -76,11 +76,9 @@ export default function EngineRoom() {
           {/* Left column: headline + paragraphs */}
           <div>
             <h2>About Me</h2>
-            <div className="engine-headline">I build and operate product engines that launch fast, fly smooth, and land results.</div>
+            <div className="engine-headline">I build product engines that launch fast, fly smooth, and land results.</div>
             <div className="engine-sub">
-              <p>From discovery to delivery, I help teams stay aligned on the problem, narrative, and plan.</p>
-              <p>My method blends research, clear documentation, agile execution, and telemetry that powers iteration.</p>
-      
+              <p>From discovery to delivery, I keep teams aligned on the problem, the narrative, and the plan through research, documentation, agile execution, and data-driven iteration.</p>
             </div>
           </div>
 
