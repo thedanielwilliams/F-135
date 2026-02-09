@@ -20,7 +20,13 @@ export default function About() {
             <div className="about-landing-text">
       
               <p>
-                Here is how I think about it, product management isn’t about features or checklists, it’s about alignment. I help teams stay focused on the problem, design the right process, and deliver results that matter. Over the years, I’ve learned that precision and empathy can coexist, that speed without clarity is noise, and clarity without speed is inertia.
+                I'm a product manager who believes the best products are built at the intersection of user empathy and strategic execution. Over the past three years, I've led cross-functional teams to ship digital products. from tournament platforms connecting African chess players to AI-powered tools helping students and researchers work smarter.
+              </p>
+              <p>
+                My approach is rooted in curiosity and clarity. I start by deeply understanding the problem through user interviews, market research, and data. Then I translate those insights into products that actually get built and shipped—working shoulder-to-shoulder with engineers and designers to move from wireframes to working software. I've learned that speed matters, but only when paired with direction.
+              </p>
+              <p>
+                I've won hackathons, secured funding, and launched MVPs, but what drives me is the challenge of aligning teams around a vision and delivering something that genuinely solves a problem. Whether I'm defining a product roadmap, writing PRDs, or presenting to stakeholders, my goal is always the same: cut through the noise and build what matters.
               </p>
               <div className="cta-row">
                 
