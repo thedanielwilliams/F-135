@@ -43,7 +43,7 @@ export default function HackathonPatches() {
               </div>
               <div className="patch-details">
                 <div className="patch-desc">{p.desc}</div>
-                <NavLink to="/hackathons" className="button" onClick={(e) => e.stopPropagation()}>View Details →</NavLink>
+                <NavLink to="/hackathons" className="button" onClick={(e) => e.stopPropagation()}>Read More →</NavLink>
               </div>
             </div>
           ))}

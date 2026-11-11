@@ -77,7 +77,7 @@ export default function Hackathons() {
               <div style={{ marginTop: 8 }}>{it.objective}</div>
               <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
                 <button className="button accent" onClick={() => setOpen(open === idx ? null : idx)}>
-                  {open === idx ? 'Close Mission Log' : 'Open Mission Log'}
+                  {open === idx ? 'Close' : 'Read More'}
                 </button>
               </div>
 
