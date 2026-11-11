@@ -3,23 +3,38 @@ import { useState } from 'react'
 export default function Hackathons() {
   const items = [
     {
-      name: 'BloodChain', award: 'Winner — ₦500,000 prize funding', year: 2025, role: 'Product Lead', codename: 'The Podium Hackathon', date: 'Aug 2025',
-      objective: 'Defined the product vision for Nigeria’s first AI-powered blood donation and logistics platform.',
+      name: 'BloodChain',
+      award: 'Winner — ₦500,000 in hackathon funding',
+      year: 2025,
+      role: 'Product Lead',
+      codename: 'The Podium Hackathon',
+      date: 'Aug 2025',
+      objective: 'Led product discovery and MVP delivery for an AI-powered blood donation and logistics concept.',
       paragraphs: [
-        'Led a 5-person cross-functional team to win ₦500,000 prize funding.',
-        'Directed pitch strategy and team alignment, positioning BloodChain as a nationwide health solution with real-world impact.'
+        'Led a 15-person cross-functional team from product discovery through MVP delivery.',
+        'Secured ₦500,000 in hackathon funding by aligning the team and pitch around a practical blood donation and logistics workflow.'
       ]
     },
     {
-      name: 'XBag', award: 'Top 3 — GNEC', year: 2023, role: 'Product Lead', codename: 'GNEC Hackathon', date: 'Aug 2023',
-      objective: 'Conceptualised and shipped an MVP for an eco-fashion product made from upcycled plastic.',
+      name: 'XBAGS',
+      award: 'Second Runner-up — GNEC Hackathon',
+      year: 2023,
+      role: 'Product Lead',
+      codename: 'GNEC Hackathon',
+      date: 'Aug 2023',
+      objective: 'Defined product direction and led product pitching for an eco-fashion MVP made from upcycled plastic.',
       paragraphs: [
-        'Led feature planning, persona creation, and final pitch delivery, securing 3rd place out of 5,000 participants.',
-        'Co-developed the strategy deck and UX walk-through, commended by judges for clarity of vision.'
+        'Led a three-person team through product direction, feature scoping, and MVP execution.',
+        'Delivered the final product pitch, finishing as second runner-up at the GNEC Hackathon.'
       ]
     },
     {
-      name: 'Harmony DAO', award: 'Top 5', year: 2021, role: 'Product Lead', codename: 'Team BuChain', date: 'Dec 2020 – Oct 2021',
+      name: 'Harmony DAO',
+      award: 'Top 5',
+      year: 2021,
+      role: 'Product Lead',
+      codename: 'Team BuChain',
+      date: 'Dec 2020 – Oct 2021',
       objective: 'Built a blockchain-based identity system.',
       paragraphs: [
         'Owned the product roadmap, defined feature scope, and co-led front-end prototyping in Figma.',
@@ -27,13 +42,18 @@ export default function Hackathons() {
       ]
     },
     {
-      name: 'HRecords', award: 'Social Good — Runner‑up — $1,000', year: 2022, role: 'Product Lead', codename: 'EVMxIdeathon', date: '2016 inspiration → 2022 Ideathon',
+      name: 'HRecords',
+      award: 'Social Good — Runner-up — $1,000',
+      year: 2022,
+      role: 'Product Lead',
+      codename: 'EVMxIdeathon',
+      date: '2016 inspiration → 2022 Ideathon',
       objective: 'Use blockchain to help African hospitals store patient data and track inventory.',
       paragraphs: [
         'Origin story: In April 2016, a patient in Lagos was denied surgery because nurses couldn’t find his file. Events like this shaped our mission.',
-        'Proposed a ledger‑backed records system that gives hospitals durable access to patient histories while improving inventory traceability.',
+        'Proposed a ledger-backed records system that gives hospitals durable access to patient histories while improving inventory traceability.',
         'What we learned: 8/10 African hospitals record details manually; ~1% of Nigerians can access their medical records; hospitals rarely have the past history of new patients.',
-        'Outcome: Submitted to EVMxIdeathon. Won Social Good runner‑up ($1,000).',
+        'Outcome: Submitted to EVMxIdeathon. Won Social Good runner-up ($1,000).',
         'Next steps: Product development, user interviews, beta testing, and launch.',
         'Built with: React, Node.js, Solidity, IPFS, AOS.'
       ]
@@ -45,20 +65,21 @@ export default function Hackathons() {
   return (
     <section className="section">
       <div className="container">
-        <h2>Hackathons</h2>
-        <p className="muted" style={{ marginTop: 4, marginBottom: 8 }}>I treat hackathons like secret missions — get in, get it done, get out. Every challenge is a chance to build fast, think clear, and solve real problems. Sometimes the solution saves a life; other times, it sparks something even bigger.</p>
-        <p className="muted" style={{ marginBottom: 12 }}>Here are a few missions I’ve flown.</p>
+        <h2>Some ideas don't come with much time.</h2>
+        <p className="muted" style={{ marginTop: 4, marginBottom: 16, maxWidth: 680 }}>
+          Hackathons have given me opportunities to work with new teams, test ideas quickly, and make decisions under tight deadlines.
+        </p>
         <div className="grid cols-3" style={{ marginTop: 18 }}>
           {items.map((it, idx) => (
             <div key={it.name} className={`card mission-card ${open === idx ? 'is-open' : ''}`}>
               <div style={{ fontWeight: 700, marginTop: 6 }}>{it.name} <span style={{ color: 'var(--muted)', fontWeight: 400 }}>({it.year})</span></div>
               <div style={{ color: 'var(--muted)', marginTop: 4 }}>{it.award}</div>
               <div style={{ marginTop: 8 }}>{it.objective}</div>
-              <div style={{ display: 'flex', gap: 10, marginTop: 10 }}>
+              <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
                 <button className="button accent" onClick={() => setOpen(open === idx ? null : idx)}>
                   {open === idx ? 'Close Mission Log' : 'Open Mission Log'}
                 </button>
-                </div>
+              </div>
 
               {/* Inline mission log expansion */}
               <div className="mission-log" aria-hidden={open === idx ? 'false' : 'true'}>

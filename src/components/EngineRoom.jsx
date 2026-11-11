@@ -1,111 +1,54 @@
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-
-function Gauge({ label, value, color = 'var(--accent)' }) {
-  const circumference = 2 * Math.PI * 36
-  const dash = (value / 100) * circumference
-  return (
-    <div className="gauge" role="meter" aria-label={`${label} level`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={100}>
-      <svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true">
-        <circle cx="48" cy="48" r="36" stroke="rgba(255,255,255,0.12)" strokeWidth="10" fill="none" />
-        <motion.circle
-          cx="48" cy="48" r="36" stroke={color} strokeWidth="10" fill="none"
-          strokeDasharray={`${dash} ${circumference}`}
-          initial={{ strokeDashoffset: circumference }}
-          animate={{ strokeDashoffset: circumference - dash }}
-          transition={{ duration: 1.2 }}
-        />
-      </svg>
-      <div className="gauge-label gauge-label-mobile">{label}</div>
-      <div className="gauge-value">{value}%</div>
-    </div>
-  )
-}
-
-const systems = [
+const processSteps = [
   {
-    icon: '🧭',
-    title: 'Product',
-    body: 'I turn ideas into structured execution, defining roadmaps, writing clear PRDs, and driving agile sprints that keep teams moving in sync and focused on measurable outcomes.'
+    number: '01',
+    title: '01. Find the real problem',
+    paragraphs: [
+      'I start with the people using the product.',
+      'What are they trying to do? Where are they getting stuck? What does their feedback tell us?',
+      'These questions help turn assumptions into clearer product requirements.'
+    ]
   },
   {
-    icon: '🎯',
-    title: 'Research & Design',
-    body: 'I ground product decisions in user insight, designing flows that are intuitive, validated through testing, and informed by continuous feedback to remove friction and enhance usability.'
+    number: '02',
+    title: '02. Make the trade-offs',
+    paragraphs: [
+      'Not everything belongs in the next release.',
+      'I work through priorities, user value, and technical constraints, translating ideas into roadmaps and requirements that teams can act on.'
+    ]
   },
   {
-    icon: '⚙️',
-    title: 'Technology',
-    body: 'I collaborate with engineers to build fast, stable systems — crafting technical documentation, mapping dependencies, and leading deployments that ensure reliable launches and scalable performance.'
-  },
-  {
-    icon: '📊',
-    title: 'Data',
-    body: 'I use data as navigation, tracking performance through SQL and analytics dashboards, identifying trends through cohort analysis, and translating metrics into actionable strategy for growth and iteration.'
+    number: '03',
+    title: '03. Ship, learn, improve',
+    paragraphs: [
+      'The plan matters. What reaches the user matters more.',
+      'I work closely with design and engineering through delivery, then use feedback and product performance to understand what needs improving.'
+    ]
   }
 ]
 
 export default function EngineRoom() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) return
-    const mq = window.matchMedia('(max-width: 640px)')
-    const handler = (e) => setIsMobile(e.matches)
-    // Initialize state
-    handler(mq)
-    // Add listener with browser compatibility
-    if (mq.addEventListener) {
-      mq.addEventListener('change', handler)
-    } else if (mq.addListener) {
-      mq.addListener(handler)
-    }
-    return () => {
-      if (mq.removeEventListener) {
-        mq.removeEventListener('change', handler)
-      } else if (mq.removeListener) {
-        mq.removeListener(handler)
-      }
-    }
-  }, [])
-
   return (
-    <section id="engine-room" className="section">
+    <section id="how-i-work" className="section">
       <div className="container">
-        <div className="engine-room">
-          {/* Left column: headline + paragraphs */}
-          <div>
-            <h2>About Me</h2>
-            <div className="engine-headline">I build product engines that launch fast, fly smooth, and land results.</div>
-            <div className="engine-sub">
-              <p>From discovery to delivery, I keep teams aligned on the problem, the narrative, and the plan through research, documentation, agile execution, and data-driven iteration.</p>
-            </div>
-          </div>
-
-          {/* Right column: dials */}
-          <div className="gauge-grid">
-            <Gauge label="Design" value={77} color="var(--afterburn-blue)" />
-            <Gauge label="Documentation" value={88} color="var(--accent-orange)" />
-            <Gauge label="Technology" value={95} color="var(--accent-purple)" />
-          </div>
+        <div className="section-header-block">
+          <h2>The hard part isn't having ideas. It's deciding what happens next.</h2>
+          <p className="section-subtext" style={{ maxWidth: 680 }}>
+            A product can have a hundred good feature ideas. The job is to understand which ones solve a real problem, which ones can wait, and what the team can realistically deliver.
+          </p>
         </div>
 
-        {/* Below: systems grid with icons, accordion on mobile */}
-        <div className="systems-grid">
-          {systems.map((sys) => (
-            <details key={sys.title} className="system-card" open={!isMobile}>
-              <summary className="system-summary" aria-label={`Toggle ${sys.title}`}>
-                <span className="system-icon" aria-hidden>{sys.icon}</span>
-                <span className="system-title">{sys.title}</span>
-              </summary>
-              <div className="system-text">
-                <p>{sys.body}</p>
+        <div className="process-grid">
+          {processSteps.map((step) => (
+            <div key={step.number} className="card process-card">
+              <h3 className="process-card-title">{step.title}</h3>
+              <div className="process-card-body">
+                {step.paragraphs.map((p, idx) => (
+                  <p key={idx}>{p}</p>
+                ))}
               </div>
-            </details>
+            </div>
           ))}
         </div>
-
-        {/* Removed CTA button */}
       </div>
     </section>
   )

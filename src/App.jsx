@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import './App.css'
 
@@ -7,63 +7,122 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Hackathons from './pages/Hackathons.jsx'
-// import Skills from './pages/Skills.jsx'
 import Contact from './pages/Contact.jsx'
 import BuildLog from './pages/BuildLog.jsx'
 
-function ScrollTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '')
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 60)
+      return () => clearTimeout(timer)
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return null
 }
 
+const navItems = [
+  { label: 'Home', sectionId: 'hero', href: '/#hero' },
+  { label: 'Projects', sectionId: 'projects', href: '/#projects' },
+  { label: 'About me', sectionId: 'about', href: '/#about' },
+  { label: 'Hackathons', sectionId: 'hackathons', href: '/#hackathons' },
+  { label: 'Articles', sectionId: 'build-log', href: '/#build-log' },
+  { label: 'Contact me', sectionId: 'contact', href: '/#contact', primary: true },
+]
+
 function Nav() {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
   const close = () => setOpen(false)
+
+  const handleNavClick = (e, item) => {
+    e.preventDefault()
+    close()
+    if (location.pathname === '/') {
+      if (item.sectionId === 'hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.history.replaceState(null, '', '/')
+        return
+      }
+      const el = document.getElementById(item.sectionId)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+        window.history.replaceState(null, '', `/#${item.sectionId}`)
+        return
+      }
+    }
+    navigate(item.sectionId === 'hero' ? '/' : item.href)
+  }
+
   return (
-    <div className="nav">
+    <header className="nav">
       <div className="container nav-inner">
         <div className="brand">
-          {/* Desktop brand (not a link) */}
-          <div className="desktop-only">
+          <a
+            href="/"
+            onClick={(e) => handleNavClick(e, navItems[0])}
+            className="brand-link"
+          >
             <div className="brand-title">Daniel Williams</div>
             <div className="brand-sub">Product Manager</div>
-          </div>
-          {/* Mobile: no brand text; only Menu button (on the right) */}
+          </a>
         </div>
-        <div className="menu">
+        <nav className="menu" aria-label="Main navigation">
           {/* Menu toggle only on mobile */}
-          <button className="button menu-toggle mobile-only" aria-label="Open menu" onClick={() => setOpen(v => !v)}>Menu</button>
-          {/* Desktop links only (no Menu button) */}
+          <button
+            className="button menu-toggle mobile-only"
+            aria-label="Open menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            Menu
+          </button>
+          {/* Desktop links */}
           <div className="menu-links desktop-only">
-            <NavLink to="/" onClick={close}>Home</NavLink>
-            <NavLink to="/about" onClick={close}>About me</NavLink>
-            <NavLink to="/projects" onClick={close}>Projects</NavLink>
-            <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
-            <NavLink to="/build-log" onClick={close}>Articles</NavLink>
-            <NavLink to="/contact" className="button primary" onClick={close}>Contact me</NavLink>
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item)}
+                className={item.primary ? 'button primary' : ''}
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
-        </div>
+        </nav>
       </div>
       {open && (
-        <div className="mobile-drawer" role="dialog" aria-modal="true">
+        <div className="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
           <div className="container">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div className="brand-title">Menu</div>
+              <div className="brand-title">Daniel Williams</div>
               <button className="button" onClick={close}>Close</button>
             </div>
             <div className="drawer-links">
-              <NavLink to="/" onClick={close}>Home</NavLink>
-              <NavLink to="/about" onClick={close}>About me</NavLink>
-              <NavLink to="/projects" onClick={close}>Projects</NavLink>
-              <NavLink to="/hackathons" onClick={close}>Hackathons</NavLink>
-              <NavLink to="/build-log" onClick={close}>Articles</NavLink>
-              <NavLink to="/contact" className="button primary" onClick={close}>Contact me</NavLink>
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item)}
+                  className={item.primary ? 'button primary' : ''}
+                >
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
         </div>
       )}
-    </div>
+    </header>
   )
 }
 
@@ -71,7 +130,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        F-135 Uber Jet
+        <div>Daniel Williams — Product Manager</div>
         <small>© {new Date().getFullYear()} Daniel Williams Onikola</small>
       </div>
     </footer>
@@ -89,11 +148,10 @@ function Page({ children }) {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollTop />
+      <ScrollManager />
       <div className="app">
         <Nav />
         <main className="main">
-          {/* Route transitions */}
           <RouteTransition />
         </main>
         <Footer />
@@ -111,7 +169,6 @@ function RouteTransition() {
         <Route path="/about" element={<Page><About /></Page>} />
         <Route path="/projects" element={<Page><Projects /></Page>} />
         <Route path="/hackathons" element={<Page><Hackathons /></Page>} />
-        {/* <Route path="/skills" element={<Page><Skills /></Page>} /> */}
         <Route path="/build-log" element={<Page><BuildLog /></Page>} />
         <Route path="/contact" element={<Page><Contact /></Page>} />
       </Routes>

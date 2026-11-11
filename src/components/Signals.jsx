@@ -1,21 +1,29 @@
+const achievements = [
+  {
+    value: '6 weeks',
+    description: 'Led a five-person product team to deliver the 64SQRS MVP for testing.'
+  },
+  {
+    value: '250+ to 2,000+',
+    description: "Grew the Gentlemen's Crib community from over 250 to more than 2,000 members."
+  },
+  {
+    value: '35%',
+    description: 'Increase in website traffic at Accrue over three months.'
+  }
+]
+
 export default function Signals() {
   return (
-    <section id="signals" className="section">
+    <section id="proof-of-work" className="proof-section" aria-label="Proof of work">
       <div className="container">
-        <h2>Metrics</h2>
-        <div className="signals">
-          <div className="signal">
-            <div className="signal-label">Total Sprints</div>
-            <div className="signal-value">1000+</div>
-          </div>
-          <div className="signal">
-            <div className="signal-label">Avg Velocity</div>
-            <div className="signal-value">2–3 wks</div>
-          </div>
-          <div className="signal">
-            <div className="signal-label">Total Prize Funding</div>
-            <div className="signal-value">₦5.25M+</div>
-          </div>
+        <div className="proof-grid">
+          {achievements.map((item) => (
+            <div key={item.value} className="proof-card">
+              <div className="proof-value">{item.value}</div>
+              <p className="proof-desc">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

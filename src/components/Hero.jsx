@@ -1,54 +1,64 @@
-import { useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useNavigate, useLocation } from 'react-router-dom'
+
+// Set to '/Daniel_Williams_Resume.pdf' once the CV PDF is added to public/
+export const CV_URL = ''
 
 export default function Hero() {
-  const { scrollYProgress } = useScroll()
-  const y = useTransform(scrollYProgress, [0, 0.6], [0, -60])
-  const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0.95])
-  const [trailActive, setTrailActive] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  useEffect(() => {
-    let timeout
-    const onScroll = () => {
-      setTrailActive(true)
-      clearTimeout(timeout)
-      timeout = setTimeout(() => setTrailActive(false), 3000)
+  const handleExploreWork = (e) => {
+    e.preventDefault()
+    const el = document.getElementById('projects')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    } else if (location.pathname !== '/') {
+      navigate('/#projects')
     }
-    window.addEventListener('scroll', onScroll)
-    return () => { window.removeEventListener('scroll', onScroll); clearTimeout(timeout) }
-  }, [])
+  }
 
   return (
-    <section id="hero" className="section">
-      <motion.div className="container hero" style={{ y, opacity }}>
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h2 className="hero-title"> Hi, I’m Daniel.👋 A Product Manager who blends strategy, systems thinking, and empathy to turn ideas into valuable products. </h2>
-          <p className="hero-sub">For over three years, I’ve helped teams turn problems into valuable products. I spot clear PRDs and SRDs, design user journeys and collaborate efficiently with engineers.</p>
-          <div className="cta-row" style={{ justifyContent: 'center' }}>
-      
+    <section id="hero" className="section hero-section">
+      <div className="container">
+        <div className="hero-grid">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              I help teams decide <span className="hero-accent">what to build</span>, what to cut, and <span className="hero-accent">what to ship</span>.
+            </h1>
+            <p className="hero-sub">
+              I'm Daniel Williams, a Product Manager who leads teams from discovery to release—turning user problems into clear priorities and working software.
+            </p>
+            <div className="cta-row hero-cta">
+              <a href="#projects" onClick={handleExploreWork} className="button accent">
+                Explore my work
+              </a>
+              {CV_URL ? (
+                <a href={CV_URL} download className="button">
+                  Download my CV
+                </a>
+              ) : (
+                <button
+                  type="button"
+                  className="button"
+                  aria-disabled="true"
+                  title="CV file (/Daniel_Williams_Resume.pdf) to be added"
+                  style={{ opacity: 0.65, cursor: 'default' }}
+                >
+                  Download my CV
+                </button>
+              )}
+            </div>
           </div>
-          {/* Mission chips removed as requested */}
 
-          <div style={{ marginTop: 32 }}>
+          <div className="hero-media">
             <img
               src="/IMG_9210.jpg"
-              alt="Daniel portrait"
+              alt="Daniel Williams, Product Manager"
               className="hero-photo"
-              loading="lazy"
             />
           </div>
-        </motion.div>
-
-        {/* Animated runway line */}
-        <div className="runway">
-          <div className="runway-line" />
         </div>
-
-        {/* Engine trail overlay */}
-        {trailActive && (
-          <motion.div className="engine-trail" initial={{ opacity: 0 }} animate={{ opacity: 0.4 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} />
-        )}
-      </motion.div>
+      </div>
     </section>
   )
 }

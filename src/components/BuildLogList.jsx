@@ -1,27 +1,46 @@
-const entries = [
-  { title: 'What emerging PMs can learn from hackathons', note: '“Shipping beats theory.”', href: 'https://medium.com/@onikoladanielwilliams/what-emerging-product-managers-can-learn-from-hackathons-b21114f4af01' },
-  { title: 'How I write PRDs that move teams', note: '“Frictionless handoffs.”', href: 'https://medium.com/@onikoladanielwilliams/how-i-write-prds-that-move-teams-the-art-of-a-product-requirements-document-that-inspires-action-d9b1b3b02fa4' },
-  { title: 'The bug funnel we used at 64SQRS', note: '“Precision over panic.”' },
+export const entries = [
+  {
+    title: 'What emerging PMs can learn from hackathons',
+    note: '“Shipping beats theory.”',
+    href: 'https://medium.com/@onikoladanielwilliams/what-emerging-product-managers-can-learn-from-hackathons-b21114f4af01'
+  },
+  {
+    title: 'How I write PRDs that move teams',
+    note: '“Frictionless handoffs.”',
+    href: 'https://medium.com/@onikoladanielwilliams/how-i-write-prds-that-move-teams-the-art-of-a-product-requirements-document-that-inspires-action-d9b1b3b02fa4'
+  },
+  {
+    title: 'The bug funnel we used at 64SQRS',
+    note: '“Precision over panic.”',
+    comingSoon: true
+  },
 ]
 
 export default function BuildLogList() {
   return (
     <section id="build-log" className="section">
       <div className="container">
-        <h2>Articles</h2>
+        <h2>Notes from the work.</h2>
+        <p className="section-subtext" style={{ maxWidth: 640 }}>
+          What I've learned about product decisions, building with teams, and figuring things out along the way.
+        </p>
         <div className="build-list">
           {entries.map((e) => (
             <div key={e.title} className="build-list-item">
-              {e.href ? (
-                <a href={e.href} target="_blank" rel="noopener noreferrer" className="list-title">{e.title}</a>
-              ) : (
-                <div className="list-title">{e.title}</div>
-              )}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                {e.href ? (
+                  <a href={e.href} target="_blank" rel="noopener noreferrer" className="list-title">
+                    {e.title} →
+                  </a>
+                ) : (
+                  <span className="list-title" style={{ color: 'var(--muted)' }}>{e.title}</span>
+                )}
+                {e.comingSoon && <span className="badge">Coming soon</span>}
+              </div>
               <div className="list-note">{e.note}</div>
             </div>
           ))}
         </div>
-       
       </div>
     </section>
   )
