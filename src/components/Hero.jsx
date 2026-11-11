@@ -1,8 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 
-// Set to '/Daniel_Williams_Resume.pdf' once the CV PDF is added to public/
-export const CV_URL = ''
-
 export default function Hero() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -32,21 +29,6 @@ export default function Hero() {
               <a href="#projects" onClick={handleExploreWork} className="button accent">
                 Explore my work
               </a>
-              {CV_URL ? (
-                <a href={CV_URL} download className="button">
-                  Download my CV
-                </a>
-              ) : (
-                <button
-                  type="button"
-                  className="button"
-                  aria-disabled="true"
-                  title="CV file (/Daniel_Williams_Resume.pdf) to be added"
-                  style={{ opacity: 0.65, cursor: 'default' }}
-                >
-                  Download my CV
-                </button>
-              )}
             </div>
           </div>
 

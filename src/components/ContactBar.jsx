@@ -1,5 +1,3 @@
-import { CV_URL } from './Hero.jsx'
-
 export const CONTACT_EMAIL = 'onikoladanielwilliams@gmail.com'
 
 export default function ContactBar() {
@@ -18,21 +16,6 @@ export default function ContactBar() {
             <a className="button accent" href={`mailto:${CONTACT_EMAIL}`}>
               Let's talk
             </a>
-            {CV_URL ? (
-              <a className="button" href={CV_URL} target="_blank" rel="noopener noreferrer">
-                View my CV
-              </a>
-            ) : (
-              <button
-                type="button"
-                className="button"
-                aria-disabled="true"
-                title="CV file (/Daniel_Williams_Resume.pdf) to be added"
-                style={{ opacity: 0.65, cursor: 'default' }}
-              >
-                View my CV
-              </button>
-            )}
           </div>
           <small className="muted" style={{ display: 'block', marginTop: 14 }}>
             Direct email: <code style={{ userSelect: 'all', color: 'var(--text)' }}>{CONTACT_EMAIL}</code>
