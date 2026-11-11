@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 // Configurable Notion documentation URLs for each project.
 // Leave empty ('') to show "Case study coming soon" or "Story coming soon".
 export const NOTION_LINKS = {
-  zent: '',
+  zent: 'https://app.notion.com/p/Zent-Taking-a-Merchant-Sales-Platform-From-Mobile-to-Web-ed21a8dae9064b7c990e7d0efceefa3b?source=copy_link',
   sixtyFourSqrs: 'https://hurricane-woolen-96d.notion.site/Sport64sqs-13c22c4ad911806c9ef6f3efbf492e4c?source=copy_link',
   lockedIn: 'https://hurricane-woolen-96d.notion.site/LockedIn-App-29422c4ad911808cbb90d19017244575?source=copy_link',
   archived: 'https://hurricane-woolen-96d.notion.site/Archived-23b22c4ad9118011a6befe2257d07838?source=copy_link',
