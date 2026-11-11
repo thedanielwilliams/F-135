@@ -9,7 +9,7 @@ const missions = [
     year: 2026,
     role: 'Product Manager',
     brief: "Led the development and launch of Zent's web platform, helping merchants manage inventory, sales, and multi-currency payments.",
-    image: '/Zent.svg',
+    image: '/Zent.jpg',
     link: '/projects',
     docLink: ZENT_DOC_LINK,
   },
