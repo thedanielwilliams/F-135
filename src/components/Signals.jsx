@@ -1,15 +1,15 @@
 const achievements = [
   {
-    value: '6 weeks',
+    value: 'Web Launch',
+    description: "Led Zent's web application from development through production launch."
+  },
+  {
+    value: '6 Weeks',
     description: 'Led a five-person product team to deliver the 64SQRS MVP for testing.'
   },
   {
-    value: '250+ to 2,000+',
-    description: "Grew the Gentlemen's Crib community from over 250 to more than 2,000 members."
-  },
-  {
-    value: '35%',
-    description: 'Increase in website traffic at Accrue over three months.'
+    value: '8× Growth',
+    description: "Helped grow the Gentlemen's Crib community from 250+ to over 2,000 members."
   }
 ]
 
