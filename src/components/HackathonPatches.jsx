@@ -5,12 +5,12 @@ const patches = [
   {
     title: 'BloodChain — The Podium Hackathon',
     award: 'Winner — ₦500,000 in hackathon funding',
-    desc: 'Led a 15-person cross-functional team through product discovery and MVP delivery for an AI-powered blood donation and logistics concept, securing ₦500,000 in hackathon funding.'
+    desc: 'Led a 15-person cross-functional team to develop an AI-powered blood donation and logistics MVP, securing ₦500,000 in hackathon funding.'
   },
   {
     title: 'XBAGS — GNEC Hackathon',
     award: 'Second Runner-up — GNEC Hackathon',
-    desc: 'Led a three-person team, defined product direction, and delivered the product pitch for an upcycled plastic eco-fashion MVP, finishing as second runner-up at the GNEC Hackathon.'
+    desc: 'Led a three-person product team, defined product direction, and prepared the pitch for an upcycled plastic eco-fashion MVP, finishing second runner-up at the GNEC Hackathon.'
   },
   {
     title: 'Harmony DAO — Team BuChain',

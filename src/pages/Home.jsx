@@ -11,7 +11,8 @@ import ScrollSpy from '../components/ScrollSpy.jsx'
 export default function Home() {
   const sections = [
     { id: 'hero', label: 'Home' },
-    { id: 'projects', label: 'Selected Work' },
+    { id: 'projects', label: 'Featured Work' },
+    { id: 'experiments', label: 'Experiments' },
     { id: 'how-i-work', label: 'How I Work' },
     { id: 'about', label: 'About Me' },
     { id: 'hackathons', label: 'Hackathons' },

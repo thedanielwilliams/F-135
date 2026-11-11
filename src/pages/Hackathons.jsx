@@ -9,10 +9,10 @@ export default function Hackathons() {
       role: 'Product Lead',
       codename: 'The Podium Hackathon',
       date: 'Aug 2025',
-      objective: 'Led product discovery and MVP delivery for an AI-powered blood donation and logistics concept.',
+      objective: 'Developed an AI-powered blood donation and logistics MVP.',
       paragraphs: [
-        'Led a 15-person cross-functional team from product discovery through MVP delivery.',
-        'Secured ₦500,000 in hackathon funding by aligning the team and pitch around a practical blood donation and logistics workflow.'
+        'Led a 15-person cross-functional team to develop an AI-powered blood donation and logistics MVP.',
+        'Secured ₦500,000 in hackathon funding by aligning product discovery, MVP delivery, and pitch strategy.'
       ]
     },
     {
@@ -22,10 +22,10 @@ export default function Hackathons() {
       role: 'Product Lead',
       codename: 'GNEC Hackathon',
       date: 'Aug 2023',
-      objective: 'Defined product direction and led product pitching for an eco-fashion MVP made from upcycled plastic.',
+      objective: 'Defined product direction and prepared the pitch for an eco-fashion MVP made from upcycled plastic.',
       paragraphs: [
-        'Led a three-person team through product direction, feature scoping, and MVP execution.',
-        'Delivered the final product pitch, finishing as second runner-up at the GNEC Hackathon.'
+        'Led a three-person product team, defining product direction and feature scope.',
+        'Prepared and delivered the product pitch, finishing second runner-up at the GNEC Hackathon.'
       ]
     },
     {
